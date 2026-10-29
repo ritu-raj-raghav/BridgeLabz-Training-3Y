@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q8: Box Model Exploration</title>
+    <link rel="stylesheet" href="question8-box-model.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>CSS Box Model Exploration</h1>
+      <p>Assignment 7 &mdash; Question 8</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION 1: Box Model Layers Visual ===== -->
+      <section class="section-layers">
+        <h2>Box Model Layers</h2>
+        <p class="section-desc">
+          Every HTML element is a rectangular box made up of four layers:
+          <strong>Margin → Border → Padding → Content</strong>.
+        </p>
+
+        <!-- Nested boxes to visually show each layer -->
+        <div class="box-wrapper">
+          <div class="layer-margin">
+            <span class="layer-label">MARGIN<br /><small>(outer space — transparent)</small></span>
+            <div class="layer-border">
+              <span class="layer-label">BORDER<br /><small>(visible edge)</small></span>
+              <div class="layer-padding">
+                <span class="layer-label">PADDING<br /><small>(inner space)</small></span>
+                <div class="layer-content">
+                  <span class="layer-label">CONTENT<br /><small>(text / images)</small></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer description cards -->
+        <div class="layer-cards">
+          <div class="card card-margin">
+            <h3>Margin</h3>
+            <p>Clears an area outside the border. Completely transparent. Controls space between elements.</p>
+            <code>margin: 30px;</code>
+          </div>
+          <div class="card card-border">
+            <h3>Border</h3>
+            <p>Goes around the padding and content. Can have style, width, and color.</p>
+            <code>border: 4px solid #333;</code>
+          </div>
+          <div class="card card-padding">
+            <h3>Padding</h3>
+            <p>Clears an area around the content inside the border. Inherits background color.</p>
+            <code>padding: 20px;</code>
+          </div>
+          <div class="card card-content">
+            <h3>Content</h3>
+            <p>The actual content — text, image, or other media. Sized by width and height.</p>
+            <code>width: 200px; height: 100px;</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: Default vs border-box ===== -->
+      <section class="section-boxsizing">
+        <h2>Default vs <code>box-sizing: border-box</code></h2>
+        <p class="section-desc">
+          By default, <code>width</code> applies only to the <strong>content</strong>.
+          With <code>box-sizing: border-box</code>, padding and border are included
+          inside the declared width — making layouts much more predictable.
+        </p>
+
+        <div class="boxsizing-demo">
+
+          <!-- Default box-sizing (content-box) -->
+          <div class="demo-group">
+            <h3>Default (<code>content-box</code>)</h3>
+            <div class="box box-default">
+              <p>width: 200px</p>
+              <p>padding: 20px</p>
+              <p>border: 5px solid</p>
+              <p class="actual-size">Actual rendered width:<br /><strong>250px</strong></p>
+            </div>
+            <p class="formula">200 + 20×2 + 5×2 = <strong>250px</strong></p>
+          </div>
+
+          <!-- border-box -->
+          <div class="demo-group">
+            <h3><code>border-box</code></h3>
+            <div class="box box-borderbox">
+              <p>width: 200px</p>
+              <p>padding: 20px</p>
+              <p>border: 5px solid</p>
+              <p class="actual-size">Actual rendered width:<br /><strong>200px</strong></p>
+            </div>
+            <p class="formula">Padding + border fit <strong>inside</strong> 200px</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: Outline vs Box Model ===== -->
+      <section class="section-outline">
+        <h2>Outline is NOT Part of the Box Model</h2>
+        <p class="section-desc">
+          Unlike borders, <code>outline</code> does not take up space and does not affect layout.
+          It is drawn outside the border edge.
+        </p>
+        <div class="outline-demo-flex">
+          <div class="outline-box ob-border">
+            <strong>Border</strong>
+            <p>Takes up space</p>
+          </div>
+          <div class="outline-box ob-outline">
+            <strong>Outline</strong>
+            <p>Does NOT take up space</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q8: Box Model Exploration</p>
+    </footer>
+
+  </body>
+</html>

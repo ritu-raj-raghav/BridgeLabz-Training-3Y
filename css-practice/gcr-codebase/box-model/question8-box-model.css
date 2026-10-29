@@ -1,0 +1,301 @@
+/* =============================================
+   Assignment 7 - Q8: Box Model Exploration
+   Author: Ritu Raj Raghav
+   Description: Visually demonstrates the CSS
+   Box Model layers, box-sizing differences,
+   and outline vs border.
+   ============================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  /* Using border-box globally for predictable sizing */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #2b6cb0, #4299e1);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* ---------- MAIN ---------- */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ---------- SHARED SECTION STYLES ---------- */
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  font-size: 1.6rem;
+  color: #2b6cb0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #bee3f8;
+  padding-bottom: 8px;
+}
+
+section code {
+  background: #ebf8ff;
+  color: #2b6cb0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.section-desc {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* ============================================
+   SECTION 1 — Box Model Layers Visual
+   ============================================ */
+
+/* Wrapper centers the nested layer boxes */
+.box-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* MARGIN layer — outermost */
+.layer-margin {
+  background-color: #fefcbf; /* yellow */
+  border: 2px dashed #d69e2e;
+  padding: 30px;             /* represents margin space */
+  position: relative;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* BORDER layer */
+.layer-border {
+  background-color: #fed7d7; /* red/pink */
+  border: 6px solid #e53e3e;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* PADDING layer */
+.layer-padding {
+  background-color: #c6f6d5; /* green */
+  border: 2px dashed #38a169;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* CONTENT layer — innermost */
+.layer-content {
+  background-color: #bee3f8; /* blue */
+  border: 2px solid #3182ce;
+  padding: 20px 30px;
+  border-radius: 4px;
+  min-width: 140px;
+}
+
+/* Labels inside each layer box */
+.layer-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.layer-label small {
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  color: #555;
+}
+
+/* ---------- Layer Description Cards ---------- */
+/* Flexbox row of 4 info cards */
+.layer-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #2d3748;
+  max-width: 250px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.card code {
+  font-size: 0.82rem;
+}
+
+/* Individual card colors matching the nested boxes */
+.card-margin  { background: #fefcbf; border: 2px dashed #d69e2e; }
+.card-border  { background: #fed7d7; border: 2px solid #e53e3e; }
+.card-padding { background: #c6f6d5; border: 2px dashed #38a169; }
+.card-content { background: #bee3f8; border: 2px solid #3182ce; }
+
+/* ============================================
+   SECTION 2 — Default vs border-box
+   ============================================ */
+
+/* Flexbox row for side-by-side comparison */
+.boxsizing-demo {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.demo-group {
+  text-align: center;
+}
+
+.demo-group h3 {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+/* Both boxes declared at width: 200px */
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
+/* DEFAULT (content-box) — padding/border add to total width */
+.box-default {
+  box-sizing: content-box; /* default browser behavior */
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+  color: #742a2a;
+}
+
+/* BORDER-BOX — padding/border included in width: 200px */
+.box-borderbox {
+  box-sizing: border-box;
+  border-color: #38a169;
+  background-color: #f0fff4;
+  color: #22543d;
+}
+
+.actual-size {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Formula text below each box */
+.formula {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ============================================
+   SECTION 3 — Outline vs Border
+   ============================================ */
+
+/* Flex row for the two comparison boxes */
+.outline-demo-flex {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.outline-box {
+  width: 220px;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.outline-box strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* Border demo box — border takes up space */
+.ob-border {
+  border: 6px solid #3182ce;
+  background: #ebf8ff;
+  color: #2b4d7e;
+}
+
+/* Outline demo box — outline does NOT take up layout space */
+.ob-outline {
+  outline: 6px solid #d69e2e;
+  outline-offset: 4px;   /* gap between box edge and outline */
+  background: #fffff0;
+  color: #744210;
+  border: 1px solid transparent; /* prevent layout shift */
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
