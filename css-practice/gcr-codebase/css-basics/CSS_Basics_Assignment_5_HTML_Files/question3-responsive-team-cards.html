@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 40px 6%; font-family: Arial, sans-serif; background: #f8fafc; color: #1e293b; }
+    h1, .intro { text-align: center; }
+    .team { display: flex; flex-wrap: wrap; gap: 24px; max-width: 1100px; margin: 32px auto; }
+    .card { flex: 1 1 250px; background: white; padding: 24px; text-align: center; border-radius: 16px; box-shadow: 0 8px 24px #0f172a12; }
+    .avatar { width: 100px; height: 100px; margin: auto; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, #bfdbfe, #ddd6fe); font-size: 2rem; }
+    .role { color: #2563eb; font-weight: bold; }
+    @media (max-width: 600px) { body { padding: 24px 5%; } .team { gap: 16px; } .card { flex-basis: 100%; } }
+  </style>
+</head>
+<body>
+  <h1>Meet Our Team</h1>
+  <p class="intro">Three people working together to build great experiences.</p>
+  <main class="team">
+    <article class="card"><div class="avatar" aria-hidden="true">👩🏻‍💻</div><h2>Maya Singh</h2><p class="role">Frontend Developer</p><p>Creates accessible, responsive interfaces.</p></article>
+    <article class="card"><div class="avatar" aria-hidden="true">👨🏽‍🎨</div><h2>Arjun Patel</h2><p class="role">UI Designer</p><p>Turns ideas into simple visual designs.</p></article>
+    <article class="card"><div class="avatar" aria-hidden="true">👩🏾‍💼</div><h2>Neha Rao</h2><p class="role">Project Manager</p><p>Helps the team plan and deliver projects.</p></article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 48px 6%; font-family: Arial, sans-serif; background: #f1f5f9; color: #0f172a; }
+    h1, .subtitle { text-align: center; }
+    .plans { max-width: 1050px; margin: 36px auto; display: flex; flex-wrap: wrap; gap: 22px; align-items: stretch; }
+    .plan { flex: 1 1 240px; background: white; padding: 28px; border-radius: 16px; border: 1px solid #e2e8f0; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .plan:hover { transform: translateY(-8px); box-shadow: 0 16px 32px #0f172a1c; border-color: #6366f1; }
+    .price { font-size: 2.2rem; font-weight: bold; color: #4338ca; }
+    li { margin: 12px 0; }
+    .plan a { display: inline-block; padding: 11px 18px; border-radius: 8px; background: #4338ca; color: white; text-decoration: none; transition: background .2s ease; }
+    .plan a:hover { background: #312e81; }
+  </style>
+</head>
+<body>
+  <h1>Simple, Transparent Pricing</h1>
+  <p class="subtitle">Choose the plan that works for you.</p>
+  <main class="plans">
+    <section class="plan"><h2>Basic</h2><p class="price">₹0</p><p>For getting started</p><ul><li>1 project</li><li>Community support</li><li>Basic features</li></ul><a href="#basic">Choose Basic</a></section>
+    <section class="plan"><h2>Pro</h2><p class="price">₹499</p><p>For growing projects</p><ul><li>10 projects</li><li>Email support</li><li>All core features</li></ul><a href="#pro">Choose Pro</a></section>
+    <section class="plan"><h2>Team</h2><p class="price">₹999</p><p>For collaborative teams</p><ul><li>Unlimited projects</li><li>Priority support</li><li>Team collaboration</li></ul><a href="#team">Choose Team</a></section>
+  </main>
+</body>
+</html>

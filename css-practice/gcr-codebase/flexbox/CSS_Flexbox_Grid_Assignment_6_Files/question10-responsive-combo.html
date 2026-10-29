@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox and Grid Layout</title>
+  <link rel="stylesheet" href="question10-responsive-combo.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">FlexGrid</a>
+    <nav aria-label="Main navigation"><a href="#article">Article</a><a href="#sidebar">Resources</a><a href="#footer">Contact</a></nav>
+  </header>
+  <main class="content-grid" id="top">
+    <article class="article" id="article">
+      <h1 class="animated-title">Design That Adapts</h1>
+      <p>Flexbox and Grid work together to create flexible page layouts. Grid organizes the larger page structure, while Flexbox aligns items within individual sections.</p>
+      <section class="article-boxes">
+        <div class="info-box"><h2>Plan</h2><p>Start with clear content priorities.</p></div>
+        <div class="info-box"><h2>Build</h2><p>Use Grid for the page and Flexbox for groups.</p></div>
+        <div class="info-box"><h2>Test</h2><p>Check the layout at different screen widths.</p></div>
+      </section>
+    </article>
+    <aside class="sidebar" id="sidebar"><h2>Resources</h2><p>Explore semantic HTML, CSS Grid, Flexbox and responsive design principles.</p><a href="#article">Back to article ↑</a></aside>
+  </main>
+  <footer id="footer"><p>© 2026 FlexGrid. All rights reserved.</p></footer>
+</body>
+</html>

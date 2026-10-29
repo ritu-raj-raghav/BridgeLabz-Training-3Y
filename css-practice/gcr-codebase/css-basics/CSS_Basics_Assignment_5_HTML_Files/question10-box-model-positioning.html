@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model and Positioning</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f8fafc; color: #1e293b; }
+    header { position: sticky; top: 0; z-index: 2; background: #0f766e; color: white; padding: 18px 6%; }
+    main { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    .box { margin: 22px 0; padding: 24px; border: 4px solid #0f766e; background: #ccfbf1; border-radius: 12px; }
+    .relative { position: relative; min-height: 170px; background: #dbeafe; border-color: #2563eb; }
+    .absolute-tag { position: absolute; top: 12px; right: 12px; background: #1d4ed8; color: white; padding: 8px 12px; border-radius: 6px; }
+    .cards { display: flex; flex-wrap: wrap; gap: 18px; }
+    .card { flex: 1 1 220px; padding: 20px; border: 2px solid #cbd5e1; margin: 4px; background: white; border-radius: 10px; }
+    .floating { float: left; width: 120px; height: 90px; margin: 0 16px 10px 0; display: grid; place-items: center; background: #fde68a; border: 3px solid #d97706; }
+    .clear { clear: both; }
+    footer { margin-top: 36px; padding: 22px; text-align: center; background: #e2e8f0; }
+  </style>
+</head>
+<body>
+  <header><strong>CSS Box Model & Positioning</strong></header>
+  <main>
+    <h1>Understanding Layout</h1>
+    <p>Every element can have content, padding, a border, and margin. The universal box-sizing rule makes width calculations easier.</p>
+    <section class="box"><h2>Standard Box</h2><p>This box demonstrates padding inside the border and margin outside it.</p></section>
+    <section class="box relative"><span class="absolute-tag">Absolutely positioned</span><h2>Relative Container</h2><p>The label is positioned relative to this section.</p></section>
+    <h2>Flexible Cards</h2>
+    <section class="cards"><article class="card"><h3>Card One</h3><p>Flexible width</p></article><article class="card"><h3>Card Two</h3><p>Padding and border</p></article><article class="card"><h3>Card Three</h3><p>Responsive layout</p></article></section>
+    <h2>Float Example</h2>
+    <div class="floating">Floated box</div><p>Text wraps around the floated element. This demonstrates how float affects nearby inline content in a layout.</p><p class="clear">This paragraph clears the float and begins below it.</p>
+  </main>
+  <footer>End of box model demonstration</footer>
+</body>
+</html>

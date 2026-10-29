@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 36px 5%; font-family: Arial, sans-serif; background: #f8fafc; color: #1e293b; }
+    h1 { text-align: center; }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 1200px; margin: 30px auto; }
+    figure { margin: 0; overflow: hidden; border-radius: 12px; background: white; box-shadow: 0 4px 16px #0f172a12; }
+    figure img { display: block; width: 100%; height: 230px; object-fit: cover; transition: transform .3s ease; }
+    figure:hover img { transform: scale(1.05); }
+    figcaption { padding: 14px; text-align: center; font-weight: bold; }
+    @media (max-width: 800px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 520px) { .gallery { grid-template-columns: 1fr; } figure img { height: 250px; } }
+  </style>
+</head>
+<body>
+  <h1>Nature Gallery</h1>
+  <main class="gallery">
+    <figure><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="Mountain lake"><figcaption>Mountain Lake</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Sunlight in a forest"><figcaption>Forest Path</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80" alt="Green hills"><figcaption>Green Hills</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="Lake surrounded by mountains"><figcaption>Quiet Waters</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Wildlife in nature"><figcaption>Wildlife</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Open landscape"><figcaption>Open Landscape</figcaption></figure>
+  </main>
+</body>
+</html>

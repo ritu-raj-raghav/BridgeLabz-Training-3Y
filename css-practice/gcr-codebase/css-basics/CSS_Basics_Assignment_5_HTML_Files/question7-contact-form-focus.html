@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; font-family: Arial, sans-serif; background: linear-gradient(135deg, #dbeafe, #fce7f3); color: #1e293b; }
+    form { width: min(100%, 520px); background: white; padding: 30px; border-radius: 16px; box-shadow: 0 12px 32px #1e293b18; }
+    label { display: block; margin: 16px 0 6px; font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; transition: border-color .2s, box-shadow .2s; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px #3b82f633; }
+    button { margin-top: 20px; padding: 12px 20px; border: 0; border-radius: 8px; background: #1d4ed8; color: white; font: inherit; cursor: pointer; }
+    button:hover, button:focus-visible { background: #1e40af; outline: 3px solid #93c5fd; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <form action="#" method="post">
+    <h1>Contact Us</h1>
+    <p>Send us a message using the form below.</p>
+    <label for="name">Full name</label><input id="name" name="name" type="text" placeholder="Your name" required>
+    <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required>
+    <label for="topic">Topic</label><select id="topic" name="topic"><option>General question</option><option>Feedback</option><option>Support</option></select>
+    <label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</body>
+</html>

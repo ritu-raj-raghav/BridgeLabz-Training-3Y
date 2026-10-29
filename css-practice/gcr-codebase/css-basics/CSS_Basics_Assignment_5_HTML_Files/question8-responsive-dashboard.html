@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Dashboard</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
+    header { position: fixed; top: 0; left: 0; right: 0; height: 64px; display: flex; align-items: center; padding: 0 24px; background: #0f172a; color: white; z-index: 5; }
+    aside { position: fixed; top: 64px; bottom: 0; left: 0; width: 220px; padding: 24px; background: #1e293b; color: white; }
+    aside a { display: block; color: #e2e8f0; text-decoration: none; padding: 12px 0; }
+    main { margin-left: 220px; padding: 92px 28px 28px; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .stat, .panel { background: white; border-radius: 12px; padding: 22px; box-shadow: 0 4px 16px #0f172a0b; }
+    .stat strong { display: block; font-size: 1.8rem; margin-top: 8px; color: #4f46e5; }
+    .panel { margin-top: 20px; }
+    @media (max-width: 760px) { aside { width: 160px; padding: 16px; } main { margin-left: 160px; padding: 84px 16px 20px; } .stats { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { aside { position: static; width: auto; margin-top: 64px; display: flex; gap: 16px; padding: 8px 16px; } aside a { padding: 8px 0; } main { margin-left: 0; padding-top: 20px; } }
+  </style>
+</head>
+<body>
+  <header><strong>Acme Dashboard</strong></header>
+  <aside><nav><a href="#overview">Overview</a><a href="#reports">Reports</a><a href="#settings">Settings</a></nav></aside>
+  <main id="overview">
+    <h1>Dashboard Overview</h1>
+    <section class="stats">
+      <div class="stat">Total users<strong>1,248</strong></div>
+      <div class="stat">Revenue<strong>₹84,500</strong></div>
+      <div class="stat">Open tasks<strong>18</strong></div>
+    </section>
+    <section class="panel" id="reports"><h2>Recent Activity</h2><p>Your dashboard content appears here. The fixed header and sidebar keep navigation accessible on larger screens.</p></section>
+    <section class="panel" id="settings"><h2>Quick Note</h2><p>This sample layout adjusts its sidebar and content for tablet and mobile widths.</p></section>
+  </main>
+</body>
+</html>
