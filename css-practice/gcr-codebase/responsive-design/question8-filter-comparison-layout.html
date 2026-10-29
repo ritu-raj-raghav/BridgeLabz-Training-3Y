@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9 - Q8: Filter Comparison Layout</title>
+    <link rel="stylesheet" href="question8-filter-comparison-layout.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Before &amp; After Filter Comparison</h1>
+      <p>Assignment 9 &mdash; Question 8 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: SIDE-BY-SIDE FILTER COMPARISON ===== -->
+      <section class="comparison-section">
+        <h2>Before &amp; After Exposure Analysis</h2>
+        <p class="section-desc">
+          On desktop, the two images are aligned side-by-side. The right image has a vibrant
+          CSS filter applied (<code>contrast(175%) brightness(125%)</code>).
+          Hover over the right image to watch the filter smoothly fade away back to original raw capture.
+          Stacks vertically with captions below <strong>700px</strong>.
+        </p>
+
+        <!-- Side-by-side container -->
+        <div class="comparison-stage">
+
+          <!-- Left Image: Unfiltered Original ("Before") -->
+          <figure class="comparison-card card-before">
+            <span class="state-badge badge-before">Before (Raw Exposure)</span>
+            <div class="image-box">
+              <svg class="photo-svg raw-img" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8" />
+                    <stop offset="70%" stop-color="#bae6fd" />
+                    <stop offset="100%" stop-color="#fef08a" />
+                  </linearGradient>
+                  <linearGradient id="hillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#15803d" />
+                    <stop offset="100%" stop-color="#166534" />
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#skyGrad)" />
+                <circle cx="360" cy="80" r="45" fill="#facc15" opacity="0.9" />
+                <polygon points="40,300 180,120 320,300" fill="url(#hillGrad)" />
+                <polygon points="180,300 310,160 440,300" fill="#14532d" />
+                <rect y="260" width="100%" height="40" fill="#0f766e" />
+                <text x="50%" y="94%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI" font-weight="700" font-size="16">Raw Natural Spectrum</text>
+              </svg>
+            </div>
+            <figcaption>
+              <strong>Baseline Image:</strong> Standard unfiltered dynamic range with neutral contrast and brightness.
+            </figcaption>
+          </figure>
+
+          <!-- Right Image: Filter Applied ("After") -->
+          <figure class="comparison-card card-after">
+            <span class="state-badge badge-after">After (Filtered: Contrast + Brightness)</span>
+            <div class="image-box">
+              <svg class="photo-svg filtered-img" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8" />
+                    <stop offset="70%" stop-color="#bae6fd" />
+                    <stop offset="100%" stop-color="#fef08a" />
+                  </linearGradient>
+                  <linearGradient id="hillGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#15803d" />
+                    <stop offset="100%" stop-color="#166534" />
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#skyGrad2)" />
+                <circle cx="360" cy="80" r="45" fill="#facc15" opacity="0.9" />
+                <polygon points="40,300 180,120 320,300" fill="url(#hillGrad2)" />
+                <polygon points="180,300 310,160 440,300" fill="#14532d" />
+                <rect y="260" width="100%" height="40" fill="#0f766e" />
+                <text x="50%" y="94%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI" font-weight="700" font-size="16">Enhanced Grade</text>
+              </svg>
+            </div>
+            <figcaption>
+              <strong>CSS Enhanced:</strong> <code>filter: contrast(175%) brightness(125%);</code>. Hover to fade out!
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 9 &mdash; Q8: Filter Comparison Layout</p>
+    </footer>
+
+  </body>
+</html>

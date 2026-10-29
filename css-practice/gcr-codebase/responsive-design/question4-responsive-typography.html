@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9 - Q4: Responsive Typography</title>
+    <link rel="stylesheet" href="question4-responsive-typography.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Fluid Responsive Typography</h1>
+      <p>Assignment 9 &mdash; Question 4 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: RESPONSIVE TYPOGRAPHY DEMONSTRATION ===== -->
+      <section class="typography-container">
+
+        <!-- Central fluid typography showcase -->
+        <div class="fluid-text-showcase">
+          <span class="fluid-tag">CSS clamp() Function</span>
+
+          <!-- REQUIRED SPECIFICATION: h1 with clamp(1.5rem, 4vw, 3rem) -->
+          <h1 class="fluid-heading">
+            Fluid Scalable Heading Typography
+          </h1>
+
+          <!-- REQUIRED SPECIFICATION: p with clamp(1rem, 2vw, 1.5rem) -->
+          <p class="fluid-paragraph">
+            The CSS <code>clamp()</code> function takes three parameters: a minimum bound, a preferred viewport-relative
+            target (e.g. <code>4vw</code> or <code>2vw</code>), and an upper ceiling. This allows your typographic hierarchy
+            to scale organically with window dimensions without relying on dozens of abrupt media queries.
+          </p>
+
+          <div class="formula-box">
+            <code>h1 { font-size: clamp(1.5rem, 4vw, 3rem); }</code><br />
+            <code>p { font-size: clamp(1rem, 2vw, 1.5rem); }</code>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===== SECTION: HOW CLAMP() WORKS ===== -->
+      <section class="clamp-explanation-section">
+        <h2>Mathematical Mechanics of clamp(MIN, VAL, MAX)</h2>
+        <div class="mechanics-grid">
+          <div class="mech-card">
+            <h4>1. Minimum Bound (1.5rem / 1rem)</h4>
+            <p>Prevents text from ever collapsing below a legible baseline, even on compact mobile devices.</p>
+          </div>
+          <div class="mech-card">
+            <h4>2. Preferred Scale (4vw / 2vw)</h4>
+            <p>Dynamically tracks window width, allowing the type to smoothly expand during browser resizing.</p>
+          </div>
+          <div class="mech-card">
+            <h4>3. Maximum Ceiling (3rem / 1.5rem)</h4>
+            <p>Caps the text dimension to preserve editorial proportion on ultra-wide desktop monitors.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 9 &mdash; Q4: Responsive Typography</p>
+    </footer>
+
+  </body>
+</html>

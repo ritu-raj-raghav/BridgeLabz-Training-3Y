@@ -1,0 +1,237 @@
+/* ==========================================================
+   Assignment 9 - Q2: Responsive Web Design Layout
+   Author: Ritu Raj Raghav
+   Description: Simple homepage layout using Flexbox, header with
+   logo on left & links on right, three feature boxes arranged
+   horizontally, hover scale up effect, vertical stack below 750px,
+   and centered footer at bottom.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================
+   HEADER: LOGO ON LEFT & NAV ON RIGHT USING FLEXBOX
+   ========================================================== */
+.navbar {
+  background-color: #0f172a;
+  padding: 16px 32px;
+  display: flex;
+  /* REQUIRED SPECIFICATION: Logo on left, nav links on right */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo a span {
+  color: #38bdf8;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  background-color: rgba(56, 189, 248, 0.15);
+}
+
+/* ==========================================================
+   MAIN CONTENT AREA
+   ========================================================== */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-intro {
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.hero-intro h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.hero-intro p {
+  color: #64748b;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   FEATURE BOXES: HORIZONTAL FLEXBOX ON DESKTOP
+   ========================================================== */
+.features-container {
+  display: flex;
+  /* REQUIRED SPECIFICATION: Horizontal arrangement */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 28px;
+}
+
+.feature-box {
+  flex: 1 1 300px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px 24px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* REQUIRED SPECIFICATION: Transition effect for hover scaling */
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+/* REQUIRED SPECIFICATION: On hover slightly scale up with transition */
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+.icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.icon-blue {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.icon-green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.icon-purple {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.feature-box h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.feature-box p {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.learn-more {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0284c7;
+  transition: color 0.2s ease;
+}
+
+.learn-more:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN: STACK VERTICALLY BELOW 750PX
+   ========================================================== */
+@media (max-width: 750px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* REQUIRED SPECIFICATION: Feature boxes stack vertically below 750px */
+  .features-container {
+    flex-direction: column;
+  }
+
+  .feature-box {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   FOOTER: CENTERED AT BOTTOM OF THE PAGE
+   ========================================================== */
+.footer-centered {
+  background-color: #0f172a;
+  color: #94a3b8;
+  /* REQUIRED SPECIFICATION: Centered at bottom */
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: auto;
+  border-top: 1px solid #1e293b;
+}

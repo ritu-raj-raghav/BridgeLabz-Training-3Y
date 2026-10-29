@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9 - Q9: Responsive Design Principles Summary</title>
+    <link rel="stylesheet" href="question9-responsive-design-principles.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Core Principles of Responsive Design</h1>
+      <p>Assignment 9 &mdash; Question 9 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: 3 GRID PRINCIPLE BOXES ===== -->
+      <section class="principles-section">
+        <h2>The Triad of Responsive Web Architecture</h2>
+        <p class="section-desc">
+          Organized in a CSS Grid layout with three distinct principle cards.
+          On hover, each card smoothly applies a vibrant background gradient and text color transformation.
+          Converts to a single-column layout below <strong>600px</strong>.
+        </p>
+
+        <!-- Grid Container -->
+        <div class="principles-grid">
+
+          <!-- Box 1: Fluid Layouts -->
+          <article class="principle-card card-fluid">
+            <span class="card-num">Principle 01</span>
+            <h3>Fluid Layouts</h3>
+            <p class="definition">
+              Structuring layouts using flexible relative percentages, viewport units, and fraction tracks rather than fixed pixel dimensions.
+            </p>
+            <div class="code-block">
+              <code>
+                .container {<br />
+                &nbsp;&nbsp;width: 90%;<br />
+                &nbsp;&nbsp;max-width: 1200px;<br />
+                &nbsp;&nbsp;margin: 0 auto;<br />
+                }
+              </code>
+            </div>
+          </article>
+
+          <!-- Box 2: Flexible Media -->
+          <article class="principle-card card-media">
+            <span class="card-num">Principle 02</span>
+            <h3>Flexible Media</h3>
+            <p class="definition">
+              Ensuring raster images, SVGs, and embedded media automatically scale within their parent container without overflowing.
+            </p>
+            <div class="code-block">
+              <code>
+                img, video, iframe {<br />
+                &nbsp;&nbsp;max-width: 100%;<br />
+                &nbsp;&nbsp;height: auto;<br />
+                &nbsp;&nbsp;display: block;<br />
+                }
+              </code>
+            </div>
+          </article>
+
+          <!-- Box 3: Breakpoints -->
+          <article class="principle-card card-breakpoints">
+            <span class="card-num">Principle 03</span>
+            <h3>Breakpoints</h3>
+            <p class="definition">
+              Strategically altering structural geometry via media queries when the user interface begins to degrade or feel cramped.
+            </p>
+            <div class="code-block">
+              <code>
+                @media (max-width: 768px) {<br />
+                &nbsp;&nbsp;.grid-row {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br />
+                &nbsp;&nbsp;}<br />
+                }
+              </code>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 9 &mdash; Q9: Responsive Design Principles</p>
+    </footer>
+
+  </body>
+</html>

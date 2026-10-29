@@ -1,0 +1,217 @@
+/* ==========================================================
+   Assignment 9 - Q6: Responsive CSS Cheat Sheet
+   Author: Ritu Raj Raghav
+   Description: Summarizes Filters, Media Queries, Responsive Design,
+   and Typography using CSS Grid (2-3 columns on large screens),
+   converting to stacked key-value rows below 700px, with hover
+   and transition effects.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+.cheatsheet-section {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.cheatsheet-section h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================
+   CSS GRID: 2-3 COLUMNS ON LARGE SCREENS
+   ========================================================== */
+.cheatsheet-grid {
+  display: grid;
+  /* REQUIRED SPECIFICATION: Grid layout with 2-3 columns */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Base Topic Box */
+.topic-box {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* REQUIRED SPECIFICATION: Add hover and transition effects */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Hover effect */
+.topic-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+.topic-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.topic-key h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.topic-val p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.topic-val code {
+  display: block;
+  font-family: 'Consolas', monospace;
+  font-size: 0.8rem;
+  color: #1e3a8a;
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  word-break: break-all;
+}
+
+.topic-val .note {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustment for mid-sized laptops */
+@media (max-width: 1024px) and (min-width: 701px) {
+  .cheatsheet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN: STACKED KEY-VALUE ROWS BELOW 700PX
+   ========================================================== */
+@media (max-width: 700px) {
+  /* REQUIRED SPECIFICATION: Below 700px convert to stacked rows
+     where each heading acts as a key followed by its value (text) */
+  .cheatsheet-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .topic-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 18px 20px;
+    gap: 16px;
+    border-left: 5px solid #2563eb;
+  }
+
+  .topic-key {
+    flex: 0 0 130px;
+  }
+
+  .topic-key h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .topic-badge {
+    margin-bottom: 4px;
+  }
+
+  .topic-val {
+    flex: 1;
+  }
+
+  .cheatsheet-section {
+    padding: 24px 16px;
+  }
+}
+
+/* Stack vertically on very narrow screens */
+@media (max-width: 480px) {
+  .topic-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .topic-key {
+    flex: none;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

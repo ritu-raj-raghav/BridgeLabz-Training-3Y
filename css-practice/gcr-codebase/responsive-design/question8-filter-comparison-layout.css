@@ -1,0 +1,210 @@
+/* ==========================================================
+   Assignment 9 - Q8: Filter Comparison Layout
+   Author: Ritu Raj Raghav
+   Description: Two images displayed side-by-side on desktop,
+   right image has CSS filter applied (contrast, brightness),
+   hover fades filter away smoothly, and below 700px stacks
+   vertically with captions.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #15803d, #166534);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+.comparison-section {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.comparison-section h2 {
+  font-size: 1.5rem;
+  color: #166534;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+.section-desc code {
+  background: #edf2f7;
+  color: #166534;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ==========================================================
+   DESKTOP: TWO IMAGES DISPLAYED SIDE-BY-SIDE
+   ========================================================== */
+.comparison-stage {
+  display: flex;
+  /* REQUIRED SPECIFICATION: Side-by-side on desktop */
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.comparison-card {
+  flex: 1 1 420px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.state-badge {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.badge-before {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.badge-after {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.image-box {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.photo-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   RIGHT IMAGE: CSS FILTER APPLIED & FADES AWAY ON HOVER
+   ========================================================== */
+/* REQUIRED SPECIFICATION: Right image has CSS filter applied */
+.filtered-img {
+  filter: contrast(175%) brightness(125%);
+  /* REQUIRED SPECIFICATION: filter fades away smoothly */
+  transition: filter 0.5s ease-in-out, transform 0.4s ease;
+}
+
+/* REQUIRED SPECIFICATION: On hover, the filter fades away smoothly */
+.card-after:hover .filtered-img {
+  filter: none;
+  transform: scale(1.02);
+}
+
+/* ==========================================================
+   CAPTIONS BELOW EACH IMAGE
+   ========================================================== */
+figcaption {
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid #edf2f7;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+  flex: 1;
+}
+
+figcaption strong {
+  color: #1e293b;
+}
+
+figcaption code {
+  background: #f1f5f9;
+  color: #15803d;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN: STACK VERTICALLY BELOW 700PX WITH CAPTIONS
+   ========================================================== */
+@media (max-width: 700px) {
+  /* REQUIRED SPECIFICATION: Below 700 px, stack both images vertically with captions */
+  .comparison-stage {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comparison-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .comparison-section {
+    padding: 24px 16px;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

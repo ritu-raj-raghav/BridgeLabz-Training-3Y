@@ -1,0 +1,203 @@
+/* ==========================================================
+   Assignment 9 - Q4: Responsive Typography
+   Author: Ritu Raj Raghav
+   Description: Demonstrates font sizes scaling automatically
+   using relative units and clamp() function, centrally aligned,
+   balanced margins and padding, and adjusted line-height
+   and spacing below 700px for better readability.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ==========================================================
+   REQUIRED SPECIFICATION: CLAMP() TYPOGRAPHY SECTION
+   ========================================================== */
+.typography-container {
+  background: #ffffff;
+  border-radius: 16px;
+  /* Balanced padding and margins */
+  padding: 60px 45px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.fluid-text-showcase {
+  max-width: 800px;
+  margin: 0 auto;
+  /* REQUIRED SPECIFICATION: Align text centrally */
+  text-align: center;
+}
+
+.fluid-tag {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #4338ca;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* REQUIRED SPECIFICATION: h1 { font-size: clamp(1.5rem, 4vw, 3rem); } */
+h1.fluid-heading {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #0f172a;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin-bottom: 24px; /* Balanced margins */
+}
+
+/* REQUIRED SPECIFICATION: p { font-size: clamp(1rem, 2vw, 1.5rem); } */
+p.fluid-paragraph {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 30px; /* Balanced margins */
+}
+
+.fluid-paragraph code {
+  background: #f1f5f9;
+  color: #4338ca;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.formula-box {
+  display: inline-block;
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 16px 24px;
+  text-align: left;
+}
+
+.formula-box code {
+  display: block;
+  font-family: 'Consolas', monospace;
+  font-size: 0.95rem;
+  color: #1e3a8a;
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   ADJUSTMENTS BELOW 700PX FOR ENHANCED READABILITY
+   ========================================================== */
+@media (max-width: 700px) {
+  /* REQUIRED SPECIFICATION: Below 700 px, adjust line-height and spacing */
+  .typography-container {
+    padding: 35px 20px;
+  }
+
+  p.fluid-paragraph {
+    line-height: 1.9;          /* Increased line-height for mobile readability */
+    letter-spacing: 0.3px;      /* Enhanced letter-spacing */
+    margin-bottom: 20px;
+  }
+
+  h1.fluid-heading {
+    line-height: 1.35;
+    margin-bottom: 16px;
+  }
+
+  .formula-box {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+/* ---------- MECHANICS SECTION ---------- */
+.clamp-explanation-section {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.clamp-explanation-section h2 {
+  font-size: 1.45rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.mechanics-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mech-card {
+  flex: 1 1 260px;
+  background: #f8fafc;
+  border-left: 4px solid #4f46e5;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.mech-card h4 {
+  font-size: 0.95rem;
+  color: #312e81;
+  margin-bottom: 6px;
+}
+
+.mech-card p {
+  font-size: 0.88rem;
+  color: #4b5568;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

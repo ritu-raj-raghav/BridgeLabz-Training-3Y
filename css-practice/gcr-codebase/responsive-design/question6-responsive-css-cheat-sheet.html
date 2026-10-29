@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9 - Q6: Responsive CSS Cheat Sheet</title>
+    <link rel="stylesheet" href="question6-responsive-css-cheat-sheet.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Responsive CSS Master Cheat Sheet</h1>
+      <p>Assignment 9 &mdash; Question 6 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: RESPONSIVE GRID CHEAT SHEET ===== -->
+      <section class="cheatsheet-section">
+        <h2>Core Responsive Concepts &amp; Syntaxes</h2>
+        <p class="section-desc">
+          Organized via CSS Grid (2&ndash;3 columns on desktop). On mobile viewports below <strong>700px</strong>,
+          the layout shifts into structured stacked key-value rows.
+          Hover over any topic card for interactive depth and lighting effects.
+        </p>
+
+        <!-- Cheat Sheet Grid -->
+        <div class="cheatsheet-grid">
+
+          <!-- Box 1: CSS Filters -->
+          <article class="topic-box box-filters">
+            <div class="topic-key">
+              <span class="topic-badge">Visuals</span>
+              <h3>CSS Filters</h3>
+            </div>
+            <div class="topic-val">
+              <p>Post-processing graphic effects applied directly to elements.</p>
+              <code>filter: blur(5px) grayscale(80%) sepia(50%);</code>
+              <p class="note">Hardware accelerated without altering DOM dimensions.</p>
+            </div>
+          </article>
+
+          <!-- Box 2: Media Queries -->
+          <article class="topic-box box-media">
+            <div class="topic-key">
+              <span class="topic-badge">Breakpoints</span>
+              <h3>Media Queries</h3>
+            </div>
+            <div class="topic-val">
+              <p>Conditional CSS blocks evaluated according to device media features.</p>
+              <code>@media (max-width: 768px) { ... }</code>
+              <p class="note">Enables customized responsive styling at critical viewport shifts.</p>
+            </div>
+          </article>
+
+          <!-- Box 3: Responsive Design -->
+          <article class="topic-box box-resp">
+            <div class="topic-key">
+              <span class="topic-badge">Architecture</span>
+              <h3>Responsive Design</h3>
+            </div>
+            <div class="topic-val">
+              <p>Triad of fluid grids, flexible media, and breakpoint media queries.</p>
+              <code>&lt;meta name="viewport" content="width=device-width"&gt;</code>
+              <p class="note">Adapts seamlessly from mobile screens to 4K displays.</p>
+            </div>
+          </article>
+
+          <!-- Box 4: Fluid Typography -->
+          <article class="topic-box box-type">
+            <div class="topic-key">
+              <span class="topic-badge">Typography</span>
+              <h3>Fluid Typography</h3>
+            </div>
+            <div class="topic-val">
+              <p>Smoothly scaled typography using relative units and mathematical bounds.</p>
+              <code>font-size: clamp(1rem, 2.5vw, 2rem);</code>
+              <p class="note">Eliminates fragmented step-function font size jumps.</p>
+            </div>
+          </article>
+
+          <!-- Box 5: Flexbox Layouts -->
+          <article class="topic-box box-flex">
+            <div class="topic-key">
+              <span class="topic-badge">1D Layout</span>
+              <h3>Flexbox Mechanics</h3>
+            </div>
+            <div class="topic-val">
+              <p>One-dimensional linear layout model for distribution along main and cross axes.</p>
+              <code>display: flex; justify-content: space-between;</code>
+              <p class="note">Ideal for navigation bars, toolbars, and evenly spaced cards.</p>
+            </div>
+          </article>
+
+          <!-- Box 6: CSS Grid System -->
+          <article class="topic-box box-grid">
+            <div class="topic-key">
+              <span class="topic-badge">2D Layout</span>
+              <h3>CSS Grid System</h3>
+            </div>
+            <div class="topic-val">
+              <p>Two-dimensional coordinate system managing rows and columns simultaneously.</p>
+              <code>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code>
+              <p class="note">Superior for full-page dashboards and complex composite galleries.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 9 &mdash; Q6: Responsive CSS Cheat Sheet</p>
+    </footer>
+
+  </body>
+</html>

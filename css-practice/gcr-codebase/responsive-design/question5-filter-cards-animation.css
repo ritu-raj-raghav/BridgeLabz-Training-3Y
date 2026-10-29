@@ -1,0 +1,258 @@
+/* ==========================================================
+   Assignment 9 - Q5: Filter Cards with Animation
+   Author: Ritu Raj Raghav
+   Description: Three profile cards using Flexbox, image filters
+   (grayscale, sepia), hover filter removal and lift (translateY(-10px)),
+   @keyframes page load fade-in, and vertical stack below 800px.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+.cards-section {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.cards-section h2 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 40px;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================
+   PAGE LOAD FADE-IN ANIMATION VIA @KEYFRAMES
+   ========================================================== */
+/* REQUIRED SPECIFICATION: Use @keyframes for a fade-in animation */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   FLEXBOX ROW: 3 PROFILE CARDS
+   ========================================================== */
+.cards-flex-row {
+  display: flex;
+  /* REQUIRED SPECIFICATION: Flexbox layout */
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.profile-card {
+  flex: 1 1 300px;
+  max-width: 360px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  /* REQUIRED SPECIFICATION: Smooth transition for hover lift and shadow */
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  
+  /* Applying @keyframes entrance animation */
+  animation: cardFadeIn 0.8s ease-out forwards;
+}
+
+/* Staggered load animation delays */
+.card-fade-1 { animation-delay: 0.1s; }
+.card-fade-2 { animation-delay: 0.25s; }
+.card-fade-3 { animation-delay: 0.4s; }
+
+/* REQUIRED SPECIFICATION: On hover lift the card using transform: translateY(-10px); */
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+  border-color: #cbd5e1;
+}
+
+/* Photo container */
+.photo-container {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  position: relative;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* Smooth transition for filter removal */
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.filter-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* ==========================================================
+   CSS FILTERS APPLIED TO CARD IMAGES
+   ========================================================== */
+/* REQUIRED SPECIFICATION: apply a filter like grayscale or sepia */
+.filter-grayscale {
+  filter: grayscale(100%);
+}
+
+.filter-sepia {
+  filter: sepia(95%);
+}
+
+.filter-grayscale-alt {
+  filter: grayscale(90%) contrast(120%);
+}
+
+/* REQUIRED SPECIFICATION: On hover, remove the filter */
+.profile-card:hover .profile-photo {
+  filter: none;
+  transform: scale(1.04);
+}
+
+/* Profile details */
+.profile-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.profile-body h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.role-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.profile-body p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.view-profile-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.profile-card:hover .view-profile-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN: STACK VERTICALLY BELOW 800PX
+   ========================================================== */
+@media (max-width: 800px) {
+  /* REQUIRED SPECIFICATION: Stack cards vertically on screens smaller than 800 px */
+  .cards-flex-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .cards-section {
+    padding: 24px 16px;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

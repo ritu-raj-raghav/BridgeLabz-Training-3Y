@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9 - Q3: Responsive Cards with Media Queries</title>
+    <link rel="stylesheet" href="question3-responsive-cards-media-queries.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Responsive Multi-Breakpoint Cards</h1>
+      <p>Assignment 9 &mdash; Question 3 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: 4 RESPONSIVE CARDS ===== -->
+      <section class="cards-section">
+        <h2>Breakpoint Grid Adaptation (4 &rarr; 2 &rarr; 1 Columns)</h2>
+        <p class="section-desc">
+          Four cards arranged in a row using Flexbox with equal spacing and padding.
+          The layout adapts at key media query breakpoints:
+          <strong>Desktop (4 columns)</strong> &rarr; <strong>Tablet &le; 900px (2 columns)</strong> &rarr; <strong>Mobile &le; 600px (1 column)</strong>.
+          Hover over each card to see its background color smoothly change.
+        </p>
+
+        <!-- Flexbox responsive cards row -->
+        <div class="cards-row">
+
+          <!-- Card 1 -->
+          <article class="responsive-card card-1">
+            <span class="step-badge">Phase 01</span>
+            <h3>UI Discovery</h3>
+            <p>
+              Auditing project constraints, analyzing user journey flows, and building design token taxonomies.
+            </p>
+            <div class="card-footer-info">
+              <span>Duration: 2 Weeks</span>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="responsive-card card-2">
+            <span class="step-badge">Phase 02</span>
+            <h3>Fluid Layouts</h3>
+            <p>
+              Constructing responsive grid skeletons and flexible box-model structures with fluid typography.
+            </p>
+            <div class="card-footer-info">
+              <span>Duration: 3 Weeks</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="responsive-card card-3">
+            <span class="step-badge">Phase 03</span>
+            <h3>State Interactions</h3>
+            <p>
+              Implementing interactive pseudo-classes, hover state transitions, and accessible focus outlines.
+            </p>
+            <div class="card-footer-info">
+              <span>Duration: 2 Weeks</span>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="responsive-card card-4">
+            <span class="step-badge">Phase 04</span>
+            <h3>Production Deploy</h3>
+            <p>
+              Optimizing CSS bundle weights, eliminating unused rules, and establishing cross-browser fidelity.
+            </p>
+            <div class="card-footer-info">
+              <span>Duration: 1 Week</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: BREAKPOINT SPECIFICATIONS ===== -->
+      <section class="spec-section">
+        <h2>Media Query Matrix</h2>
+        <div class="matrix-grid">
+          <div class="matrix-box">
+            <h4>Desktop (&gt; 900px)</h4>
+            <p><strong>4 Columns</strong> (<code>flex: 1 1 calc(25% - 15px)</code>)</p>
+          </div>
+          <div class="matrix-box">
+            <h4>Tablet (&le; 900px)</h4>
+            <p><strong>2 Columns</strong> (<code>flex: 1 1 calc(50% - 15px)</code>)</p>
+          </div>
+          <div class="matrix-box">
+            <h4>Mobile (&le; 600px)</h4>
+            <p><strong>1 Column</strong> (<code>flex: 1 1 100%</code>)</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 9 &mdash; Q3: Responsive Cards with Media Queries</p>
+    </footer>
+
+  </body>
+</html>

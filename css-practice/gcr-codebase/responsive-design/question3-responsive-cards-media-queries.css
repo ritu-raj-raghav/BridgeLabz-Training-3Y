@@ -1,0 +1,226 @@
+/* ==========================================================
+   Assignment 9 - Q3: Responsive Cards with Media Queries
+   Author: Ritu Raj Raghav
+   Description: Four cards arranged in a row using Flexbox.
+   Desktop: 4 columns, Tablet (<= 900px): 2 columns,
+   Mobile (<= 600px): 1 column. Background color change on hover,
+   and equal spacing and padding between cards.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #0f766e;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================
+   FLEXBOX ROW: EQUAL SPACING & PADDING
+   ========================================================== */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  /* REQUIRED SPECIFICATION: Equal spacing between cards */
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Base Card Styling: Desktop default (4 Columns) */
+.responsive-card {
+  /* Desktop: 4 columns accounting for gap */
+  flex: 1 1 calc(25% - 15px);
+  /* REQUIRED SPECIFICATION: Equal padding inside cards */
+  padding: 28px;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Smooth transition for hover background color shift */
+  transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.step-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: #ccfbf1;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.responsive-card h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.responsive-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.card-footer-info {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+/* ==========================================================
+   REQUIRED SPECIFICATION: Background Color Change on Hover
+   ========================================================== */
+.card-1:hover {
+  background-color: #f0fdf4; /* soft mint */
+  border-color: #86efac;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(22, 163, 74, 0.15);
+}
+
+.card-2:hover {
+  background-color: #eff6ff; /* soft sky */
+  border-color: #93c5fd;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+}
+
+.card-3:hover {
+  background-color: #faf5ff; /* soft lavender */
+  border-color: #d8b4fe;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(147, 51, 234, 0.15);
+}
+
+.card-4:hover {
+  background-color: #fffbeb; /* soft amber */
+  border-color: #fde68a;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(217, 119, 6, 0.15);
+}
+
+/* ==========================================================
+   BREAKPOINT 1: TABLET (max-width: 900px) &rarr; 2 COLUMNS
+   ========================================================== */
+@media (max-width: 900px) {
+  /* REQUIRED SPECIFICATION: Tablet (max-width 900 px): 2 columns */
+  .responsive-card {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+
+/* ==========================================================
+   BREAKPOINT 2: MOBILE (max-width: 600px) &rarr; 1 COLUMN
+   ========================================================== */
+@media (max-width: 600px) {
+  /* REQUIRED SPECIFICATION: Mobile (max-width 600 px): 1 column */
+  .responsive-card {
+    flex: 1 1 100%;
+  }
+
+  section {
+    padding: 24px 16px;
+  }
+}
+
+/* ---------- MATRIX SECTION ---------- */
+.matrix-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.matrix-box {
+  flex: 1 1 240px;
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 18px;
+  border-radius: 0 8px 8px 0;
+}
+
+.matrix-box h4 {
+  font-size: 0.95rem;
+  color: #0f766e;
+  margin-bottom: 6px;
+}
+
+.matrix-box p {
+  font-size: 0.88rem;
+  color: #4a5568;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

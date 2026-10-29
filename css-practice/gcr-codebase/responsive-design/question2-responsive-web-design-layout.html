@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9 - Q2: Responsive Web Design Layout</title>
+    <link rel="stylesheet" href="question2-responsive-web-design-layout.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER: LOGO ON LEFT & NAV ON RIGHT ===== -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="#">Nova<span>Tech</span></a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== MAIN: THREE FEATURE BOXES ===== -->
+    <main class="main-content">
+
+      <section class="hero-intro">
+        <h2>Adaptive Flexbox Architecture</h2>
+        <p>
+          Below are three feature cards arranged horizontally on desktop viewports.
+          When resized below <strong>750px</strong>, the Flexbox container flips direction to stack them vertically.
+          Hover over each box to trigger a smooth scale transition.
+        </p>
+      </section>
+
+      <!-- Horizontal Flexbox container for 3 feature boxes -->
+      <section class="features-container">
+
+        <!-- Feature Box 1 -->
+        <article class="feature-box">
+          <div class="icon-circle icon-blue">&#9881;</div>
+          <h3>Modern Architecture</h3>
+          <p>
+            Built using semantic HTML5 and cutting-edge CSS layouts that prioritize fluid responsiveness and maintainability.
+          </p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </article>
+
+        <!-- Feature Box 2 -->
+        <article class="feature-box">
+          <div class="icon-circle icon-green">&#128241;</div>
+          <h3>Responsive Design</h3>
+          <p>
+            Dynamically recalculating element geometries across mobile, tablet, and widescreen desktop displays.
+          </p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </article>
+
+        <!-- Feature Box 3 -->
+        <article class="feature-box">
+          <div class="icon-circle icon-purple">&#9889;</div>
+          <h3>Fast Performance</h3>
+          <p>
+            Hardware-accelerated CSS transformations and transitions providing 60fps interaction feedback.
+          </p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </article>
+
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER: CENTERED AT BOTTOM ===== -->
+    <footer class="footer-centered">
+      <p>&copy; 2026 NovaTech Solutions &mdash; Assignment 9 &mdash; Q2: Responsive Web Design Layout | BridgeLabz Training</p>
+    </footer>
+
+  </body>
+</html>
