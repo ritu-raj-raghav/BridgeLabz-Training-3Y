@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q1: Borders & Padding Demonstration</title>
+    <link rel="stylesheet" href="question1-borders-padding.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Borders &amp; Padding Demonstration</h1>
+      <p>Assignment 7 &mdash; Question 1 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: BORDER STYLES & PADDING SHOWCASE ===== -->
+      <section class="demo-section">
+        <h2>Border Styles, Border Radius &amp; Padding</h2>
+        <p class="section-desc">
+          This demonstration exhibits multiple boxes styled with different border styles
+          (<code>solid</code>, <code>dashed</code>, <code>double</code>, <code>groove</code>),
+          varied <code>border-radius</code> values for rounded corners, and distinct
+          <code>padding</code> values to show internal spacing. Hover over each box to see smooth transitions.
+        </p>
+
+        <!-- Horizontal flex container for demo boxes -->
+        <div class="boxes-container">
+
+          <!-- Box 1: Solid Border -->
+          <div class="demo-box box-solid">
+            <h3>Solid Border</h3>
+            <span class="badge">solid</span>
+            <p class="specs">
+              <strong>Border:</strong> 4px solid #2b6cb0<br />
+              <strong>Radius:</strong> 8px<br />
+              <strong>Padding:</strong> 15px
+            </p>
+            <div class="box-content-indicator">Content Area</div>
+          </div>
+
+          <!-- Box 2: Dashed Border -->
+          <div class="demo-box box-dashed">
+            <h3>Dashed Border</h3>
+            <span class="badge">dashed</span>
+            <p class="specs">
+              <strong>Border:</strong> 4px dashed #c53030<br />
+              <strong>Radius:</strong> 16px<br />
+              <strong>Padding:</strong> 25px
+            </p>
+            <div class="box-content-indicator">Content Area</div>
+          </div>
+
+          <!-- Box 3: Double Border -->
+          <div class="demo-box box-double">
+            <h3>Double Border</h3>
+            <span class="badge">double</span>
+            <p class="specs">
+              <strong>Border:</strong> 6px double #276749<br />
+              <strong>Radius:</strong> 24px<br />
+              <strong>Padding:</strong> 35px
+            </p>
+            <div class="box-content-indicator">Content Area</div>
+          </div>
+
+          <!-- Box 4: Groove Border -->
+          <div class="demo-box box-groove">
+            <h3>Groove Border</h3>
+            <span class="badge">groove</span>
+            <p class="specs">
+              <strong>Border:</strong> 6px groove #6b46c1<br />
+              <strong>Radius:</strong> 36px<br />
+              <strong>Padding:</strong> 20px
+            </p>
+            <div class="box-content-indicator">Content Area</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: KEY TAKEAWAYS ===== -->
+      <section class="info-section">
+        <h2>Key Concepts Explained</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h4>Borders</h4>
+            <p>
+              Borders frame elements. The <code>border-style</code> property specifies the style
+              like solid, dashed, double, groove, ridge, inset, and outset.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>Border Radius</h4>
+            <p>
+              The <code>border-radius</code> property rounds the outer border corners, producing
+              gentle curves, pill shapes, or circles.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>Padding</h4>
+            <p>
+              Padding generates space around content inside the border. Notice how larger padding
+              pushes the content farther inward from the border edges.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q1: Borders &amp; Padding</p>
+    </footer>
+
+  </body>
+</html>

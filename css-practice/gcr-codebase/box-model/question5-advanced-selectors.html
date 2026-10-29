@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q5: Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="question5-advanced-selectors.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Advanced CSS Selectors Showcase</h1>
+      <p>Assignment 7 &mdash; Question 5 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION 1: ATTRIBUTE SELECTORS & FORM INPUTS ===== -->
+      <section class="section-selectors">
+        <h2>1. Attribute Selectors (<code>[type="text"]</code>, <code>[href^="https"]</code>)</h2>
+        <p class="section-desc">
+          Attribute selectors target elements based on the presence or value of HTML attributes.
+        </p>
+
+        <div class="demo-block">
+          <h3>Form Field Targeting</h3>
+          <div class="form-row">
+            <input type="text" placeholder="I am [type='text'] (targeted)" />
+            <input type="email" placeholder="I am [type='email'] (untargeted)" />
+            <input type="password" placeholder="I am [type='password'] (untargeted)" />
+          </div>
+
+          <h3 style="margin-top: 25px;">Secure Link Targeting</h3>
+          <ul class="links-list">
+            <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs (Secure https:// link)</a></li>
+            <li><a href="https://w3.org" target="_blank">W3C Standards (Secure https:// link)</a></li>
+            <li><a href="http://example.com" target="_blank">Insecure Example (http:// link)</a></li>
+            <li><a href="document.pdf">Download Guidebook ([href$=".pdf"] target)</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: PSEUDO-CLASSES (:hover, :focus, :nth-child()) ===== -->
+      <section class="section-selectors">
+        <h2>2. Pseudo-Classes (<code>:hover</code>, <code>:focus</code>, <code>:nth-child()</code>)</h2>
+        <p class="section-desc">
+          Pseudo-classes define special interactive states or structural patterns.
+        </p>
+
+        <div class="demo-block">
+          <h3>Striped Data List using <code>:nth-child()</code></h3>
+          <ol class="striped-list">
+            <li>First Item &mdash; <code>:first-child</code> styled uniquely</li>
+            <li>Second Item &mdash; Even numbered row (<code>:nth-child(even)</code>)</li>
+            <li>Third Item &mdash; Odd numbered row (<code>:nth-child(odd)</code>)</li>
+            <li>Fourth Item &mdash; Even numbered row (<code>:nth-child(even)</code>)</li>
+            <li>Fifth Item &mdash; Odd numbered row (<code>:nth-child(odd)</code>)</li>
+            <li>Sixth Item &mdash; <code>:last-child</code> styled uniquely</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: PSEUDO-ELEMENTS (::before, ::after) ===== -->
+      <section class="section-selectors">
+        <h2>3. Pseudo-Elements (<code>::before</code>, <code>::after</code>)</h2>
+        <p class="section-desc">
+          Pseudo-elements insert cosmetic decorative content without injecting extra HTML tags into the DOM.
+        </p>
+
+        <div class="demo-block">
+          <ul class="badge-list">
+            <li class="pill-item">HTML5 Semantic Architecture</li>
+            <li class="pill-item">CSS Box Model &amp; Flexbox</li>
+            <li class="pill-item">Responsive Grid Systems</li>
+          </ul>
+
+          <blockquote class="quote-box">
+            Clean code always looks like it was written by someone who cares.
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 4: COMBINATORS (>, +, ~, descendant) ===== -->
+      <section class="section-selectors">
+        <h2>4. CSS Combinators (<code>&gt;</code>, <code>+</code>, <code>~</code>, and Descendant)</h2>
+        <p class="section-desc">
+          Combinators define relationships between target elements and their ancestors, parents, or siblings.
+        </p>
+
+        <div class="combinator-family">
+          <h3 class="lead-heading">Main Parent Container</h3>
+          <p class="intro-p">First Paragraph (Adjacent sibling <code>h3 + p</code>)</p>
+          <p class="sub-p">Second Paragraph (General sibling <code>h3 ~ p</code>)</p>
+
+          <div class="nested-subcontainer">
+            <p>Descendant Paragraph inside nested subcontainer (<code>.combinator-family p</code>)</p>
+            <span>Direct child span (<code>.nested-subcontainer &gt; span</code>)</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q5: Advanced CSS Selectors</p>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,263 @@
+/* =============================================
+   Assignment 7 - Q3: Gradient Background Webpage
+   Author: Ritu Raj Raghav
+   Description: Webpage featuring linear and radial
+   gradients, fixed header and footer, and
+   background-attachment: fixed for a parallax-like effect.
+   ============================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  background-color: #0d1117;
+  /* Top and bottom padding accommodate the fixed header and footer */
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+/* ============================================
+   FIXED HEADER (Locks to top during scroll)
+   ============================================ */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fixed-header h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #63b3ed;
+}
+
+.header-badge,
+.footer-badge {
+  background: rgba(99, 179, 237, 0.2);
+  color: #90cdf4;
+  border: 1px solid rgba(99, 179, 237, 0.4);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   FIXED FOOTER (Locks to bottom)
+   ============================================ */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  color: #cbd5e0;
+}
+
+/* ============================================
+   SECTIONS & GRADIENT DEFINITIONS
+   ============================================ */
+.gradient-section {
+  min-height: 85vh;
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card containing section content with frosted glass styling */
+.glass-card {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 45px 50px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.glass-card h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.glass-card .desc {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.gradient-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.syntax-box {
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 4px solid #63b3ed;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+
+.syntax-box h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #90cdf4;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.syntax-box code {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.features-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1 1 240px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+.feature-item strong {
+  color: #ffffff;
+}
+
+/* ---------- SECTION 1: LINEAR GRADIENT WITH FIXED ATTACHMENT (PARALLAX) ---------- */
+.linear-section {
+  /* Linear gradient angled at 135deg with fixed attachment creating parallax */
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #4299e1 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.linear-section .syntax-box {
+  border-left-color: #4299e1;
+}
+
+/* ---------- SECTION 2: RADIAL GRADIENT ---------- */
+.radial-section {
+  /* Radial gradient radiating outward from the circular center */
+  background: radial-gradient(circle at center, #97266d 0%, #44337a 45%, #1a202c 100%);
+  background-size: cover;
+}
+
+.radial-section .syntax-box {
+  border-left-color: #d53f8c;
+}
+
+/* ---------- SECTION 3: SUMMARY & COMPARISON ---------- */
+.summary-section {
+  background: linear-gradient(to bottom, #1a202c, #0f172a);
+}
+
+.comparison-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.comp-col {
+  flex: 1 1 350px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 10px;
+}
+
+.comp-col h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #90cdf4;
+}
+
+.comp-col ul {
+  list-style-position: inside;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #cbd5e0;
+}
+
+.comp-col code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #63b3ed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 30px 20px;
+  }
+  .glass-card h2 {
+    font-size: 1.5rem;
+  }
+}

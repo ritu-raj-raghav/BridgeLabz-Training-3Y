@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q4: Shadows &amp; Depth Effect Layout</title>
+    <link rel="stylesheet" href="question4-shadows-depth.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1 class="text-shadow-heading">Shadows &amp; Depth Effects</h1>
+      <p>Assignment 7 &mdash; Question 4 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: 3 PROFILE CARDS IN A SINGLE ROW ===== -->
+      <section class="cards-section">
+        <h2 class="section-title">Elevated Profile Cards</h2>
+        <p class="section-desc">
+          Below are three profile cards displaying distinct <code>box-shadow</code> styles
+          arranged in a single row using Flexbox. Headings feature <code>text-shadow</code> for dimensional depth.
+          Hover over each card to experience smooth lift and elevated shadow transitions.
+        </p>
+
+        <!-- Single row container -->
+        <div class="cards-row">
+
+          <!-- Card 1: Soft Ambient Shadow -->
+          <article class="profile-card card-ambient">
+            <div class="avatar avatar-1">RR</div>
+            <h3 class="card-name">Ritu Raj Raghav</h3>
+            <span class="card-role">Full Stack Engineer</span>
+            <p class="card-bio">
+              Specializing in modern CSS architectures, responsive design systems, and frontend optimization.
+            </p>
+            <div class="shadow-info">
+              <span class="shadow-type">Soft Ambient Shadow</span>
+              <code>0 4px 12px rgba(0,0,0,0.08)</code>
+            </div>
+            <button class="card-btn">View Profile</button>
+          </article>
+
+          <!-- Card 2: Vibrant Colored Glow Shadow -->
+          <article class="profile-card card-glow">
+            <div class="avatar avatar-2">AS</div>
+            <h3 class="card-name">Aarav Sharma</h3>
+            <span class="card-role">UI/UX Designer</span>
+            <p class="card-bio">
+              Crafting accessible, human-centric design tokens and high-impact digital experiences.
+            </p>
+            <div class="shadow-info">
+              <span class="shadow-type">Colored Glow Shadow</span>
+              <code>0 8px 24px rgba(49,130,206,0.28)</code>
+            </div>
+            <button class="card-btn">View Profile</button>
+          </article>
+
+          <!-- Card 3: Deep Multi-Layered Drop Shadow -->
+          <article class="profile-card card-layered">
+            <div class="avatar avatar-3">PK</div>
+            <h3 class="card-name">Priya Kapoor</h3>
+            <span class="card-role">Cloud Architect</span>
+            <p class="card-bio">
+              Building fault-tolerant distributed cloud microservices and scalable API infrastructure.
+            </p>
+            <div class="shadow-info">
+              <span class="shadow-type">Layered Depth Shadow</span>
+              <code>0 10px 30px rgba(0,0,0,0.18)</code>
+            </div>
+            <button class="card-btn">View Profile</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: SHADOW ANATOMY EXPLANATION ===== -->
+      <section class="explanation-section">
+        <h2>Box-Shadow &amp; Text-Shadow Breakdown</h2>
+        <div class="cards-row">
+          <div class="info-card">
+            <h4>text-shadow: x y blur color;</h4>
+            <p>
+              Adds depth behind text glyphs. Unlike box shadows, text shadows take no spread radius
+              and shape directly to the font character outlines.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>box-shadow: x y blur spread color;</h4>
+            <p>
+              Defines offset-x, offset-y, blur-radius, and optional spread-radius.
+              Stacking multiple comma-separated shadows produces natural, photo-realistic elevation.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>Elevation on :hover</h4>
+            <p>
+              Pairing <code>transform: translateY(-8px)</code> with increased blur and spread
+              simulates physical distance from the surface layer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q4: Shadows &amp; Depth Effect</p>
+    </footer>
+
+  </body>
+</html>

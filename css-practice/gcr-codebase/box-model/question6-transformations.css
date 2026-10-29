@@ -1,0 +1,239 @@
+/* =============================================
+   Assignment 7 - Q6: CSS Transformations Showcase
+   Author: Ritu Raj Raghav
+   Description: Four interactive boxes demonstrating
+   rotate(), scale(), translate(), and skew() on hover
+   with transition: all 0.4s ease; and Flexbox alignment.
+   ============================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #d69e2e, #ed8936);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SECTION STYLING ---------- */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #c05621;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #feebc8;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+section code {
+  background: #feebc8;
+  color: #9c4221;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   HORIZONTAL FLEXBOX CONTAINER FOR 4 BOXES
+   ============================================ */
+.transform-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.transform-item {
+  flex: 1 1 220px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Base Transform Box */
+.transform-box {
+  width: 170px;
+  height: 170px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  /* REQUIRED SPECIFICATION: transition: all 0.4s ease; */
+  transition: all 0.4s ease;
+}
+
+.box-icon {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+
+.transform-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+.transform-box p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Label below each box describing transformation */
+.transform-label {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.transform-label strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #2d3748;
+  margin-bottom: 4px;
+  background: #f7fafc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #edf2f7;
+}
+
+/* ============================================
+   BOX 1: rotate()
+   ============================================ */
+.box-rotate {
+  background: linear-gradient(135deg, #e53e3e, #c53030);
+}
+
+.box-rotate:hover {
+  /* Rotates 20 degrees clockwise */
+  transform: rotate(20deg);
+  box-shadow: 0 12px 28px rgba(229, 62, 62, 0.35);
+}
+
+/* ============================================
+   BOX 2: scale()
+   ============================================ */
+.box-scale {
+  background: linear-gradient(135deg, #3182ce, #2b6cb0);
+}
+
+.box-scale:hover {
+  /* Uniformly expands by 20% */
+  transform: scale(1.2);
+  box-shadow: 0 14px 30px rgba(49, 130, 206, 0.38);
+}
+
+/* ============================================
+   BOX 3: translate()
+   ============================================ */
+.box-translate {
+  background: linear-gradient(135deg, #38a169, #276749);
+}
+
+.box-translate:hover {
+  /* Shifts 15px right and 15px upwards */
+  transform: translate(15px, -15px);
+  box-shadow: -10px 15px 30px rgba(56, 161, 105, 0.35);
+}
+
+/* ============================================
+   BOX 4: skew()
+   ============================================ */
+.box-skew {
+  background: linear-gradient(135deg, #805ad5, #6b46c1);
+}
+
+.box-skew:hover {
+  /* Distorts coordinate plane */
+  transform: skew(-12deg, 4deg);
+  box-shadow: 0 12px 28px rgba(128, 90, 213, 0.35);
+}
+
+/* ---------- THEORY CARDS ---------- */
+.theory-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.theory-card {
+  flex: 1 1 260px;
+  background: #fffaf0;
+  border-left: 4px solid #dd6b20;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.theory-card h4 {
+  font-size: 1rem;
+  color: #c05621;
+  margin-bottom: 8px;
+}
+
+.theory-card p {
+  font-size: 0.88rem;
+  color: #4a5568;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

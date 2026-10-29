@@ -1,0 +1,256 @@
+/* =============================================
+   Assignment 7 - Q4: Shadows and Depth Effect Layout
+   Author: Ritu Raj Raghav
+   Description: Demonstrates various box-shadow styles,
+   text-shadow on headings, smooth lift-up hover transitions,
+   and single-row Flexbox layout.
+   ============================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER WITH TEXT-SHADOW ---------- */
+header {
+  background: linear-gradient(135deg, #2b6cb0, #3182ce);
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Heading with prominent text-shadow for depth */
+.text-shadow-heading {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  /* text-shadow: x-offset y-offset blur color */
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+header p {
+  font-size: 1.05rem;
+  opacity: 0.92;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+section {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.6rem;
+  color: #2b6cb0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+  /* Subtle text-shadow on section heading */
+  text-shadow: 1px 1px 2px rgba(43, 108, 176, 0.2);
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+/* ============================================
+   SINGLE-ROW FLEXBOX CARD CONTAINER
+   ============================================ */
+.cards-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Base Profile Card Styling */
+.profile-card {
+  flex: 1 1 300px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Smooth animation transition for lifting and shadow expansion */
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.avatar-1 { background: linear-gradient(135deg, #3182ce, #2b6cb0); }
+.avatar-2 { background: linear-gradient(135deg, #38a169, #2f855a); }
+.avatar-3 { background: linear-gradient(135deg, #805ad5, #6b46c1); }
+
+/* Card title with text-shadow */
+.card-name {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-bottom: 4px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3182ce;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.card-bio {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.shadow-info {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #edf2f7;
+}
+
+.shadow-type {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 4px;
+}
+
+.shadow-info code {
+  font-size: 0.78rem;
+  color: #3182ce;
+}
+
+.card-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 16px;
+  background: #2b6cb0;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+  background: #2c5282;
+}
+
+/* ============================================
+   CARD 1: SOFT AMBIENT SHADOW
+   ============================================ */
+.card-ambient {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.card-ambient:hover {
+  /* Lift up and expand shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* ============================================
+   CARD 2: COLORED GLOW SHADOW
+   ============================================ */
+.card-glow {
+  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.22);
+}
+
+.card-glow:hover {
+  /* Lift up and intensify colored glow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 20px 38px rgba(49, 130, 206, 0.42);
+}
+
+/* ============================================
+   CARD 3: MULTI-LAYERED DEPTH SHADOW
+   ============================================ */
+.card-layered {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-layered:hover {
+  /* Lift up and deepen multi-tier drop shadows */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 24px 44px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- INFO CARDS ---------- */
+.info-card {
+  flex: 1 1 260px;
+  background: #f7fafc;
+  border-left: 4px solid #3182ce;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.info-card h4 {
+  font-size: 0.95rem;
+  color: #2b6cb0;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.88rem;
+  color: #4a5568;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

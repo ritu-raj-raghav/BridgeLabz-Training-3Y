@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q10: Navigation Bar with Transitions</title>
+    <link rel="stylesheet" href="question10-navigation-bar.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER WITH RESPONSIVE NAVIGATION BAR ===== -->
+    <header class="navbar-header">
+      <div class="nav-container">
+
+        <!-- Brand Logo -->
+        <a href="#" class="brand-logo">BridgeLabz<span>CSS</span></a>
+
+        <!-- Horizontal Nav with 5 Links -->
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#modules" class="nav-link">Modules</a>
+            </li>
+            <li class="nav-item">
+              <a href="#assignments" class="nav-link">Assignments</a>
+            </li>
+            <li class="nav-item">
+              <a href="#showcase" class="nav-link">Showcase</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <span class="badge">Assignment 7 &mdash; Question 10</span>
+        <h1>Interactive Navigation Bar Showcase</h1>
+        <p class="hero-desc">
+          This navbar features 5 distinct links, smooth transitions styled via
+          <code>transition: all 0.3s ease;</code>, an emphasized active link indicator,
+          and a responsive media query that seamlessly converts the horizontal bar into
+          a stacked vertical menu on viewports below <strong>700px</strong>.
+        </p>
+
+        <div class="responsive-hint">
+          &#8644; <em>Resize your browser window below 700px to see the navigation links stack vertically!</em>
+        </div>
+      </section>
+
+      <!-- Section: Key Specifications -->
+      <section class="specs-section">
+        <h2>Technical Implementation Highlights</h2>
+        <div class="specs-grid">
+          <div class="spec-card">
+            <h3>Smooth Transitions</h3>
+            <p>
+              Links utilize <code>transition: all 0.3s ease;</code> for graceful background, color,
+              border, and shadow interpolations on <code>:hover</code>.
+            </p>
+          </div>
+          <div class="spec-card">
+            <h3>Active State Highlight</h3>
+            <p>
+              The active link is highlighted with an illuminated accent background and a distinct bottom border
+              to ground user spatial orientation.
+            </p>
+          </div>
+          <div class="spec-card">
+            <h3>Breakpoints &lt; 700px</h3>
+            <p>
+              Under <code>@media (max-width: 700px)</code>, the flex container flips from <code>row</code>
+              to <code>column</code>, cleanly stacking links with 100% width.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER SECTION WITH SIMPLE CENTERED TEXT ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q10: Navigation Bar with Transitions and Hover Effects</p>
+    </footer>
+
+  </body>
+</html>

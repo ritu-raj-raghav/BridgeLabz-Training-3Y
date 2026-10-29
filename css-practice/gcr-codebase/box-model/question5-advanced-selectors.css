@@ -1,0 +1,347 @@
+/* ==========================================================
+   Assignment 7 - Q5: Advanced CSS Selectors
+   Author: Ritu Raj Raghav
+   Description: Detailed demonstration of Attribute Selectors,
+   Pseudo-Classes, Pseudo-Elements, and Combinators with
+   comprehensive explanatory comments for each selector type.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #4c51bf, #667eea);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SHARED SECTION STYLES ---------- */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+  font-size: 1.45rem;
+  color: #434190;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 25px;
+  font-size: 0.98rem;
+}
+
+section code {
+  background: #edf2f7;
+  color: #434190;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.demo-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.demo-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #2d3748;
+}
+
+/* ==========================================================
+   PART 1: ATTRIBUTE SELECTORS
+   ========================================================== */
+
+/* 1.1: Exact attribute value matching [type="text"]
+   Styles only <input> elements whose 'type' attribute is exactly 'text'. */
+input[type="text"] {
+  border: 2px solid #4c51bf;
+  background-color: #f0f4ff;
+  color: #2b2c6b;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(76, 81, 191, 0.2);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1 1 220px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #cbd5e0;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* 1.2: Attribute starts-with selector [href^="https"]
+   Targets any <a> whose href value starts with "https" */
+a[href^="https"] {
+  color: #2b6cb0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a[href^="https"]:hover {
+  text-decoration: underline;
+  color: #2c5282;
+}
+
+/* 1.3: Attribute ends-with selector [href$=".pdf"]
+   Matches links ending in '.pdf' to style download anchors */
+a[href$=".pdf"] {
+  color: #c53030;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.links-list li {
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #edf2f7;
+}
+
+/* ==========================================================
+   PART 2: PSEUDO-CLASSES (:hover, :focus, :nth-child())
+   ========================================================== */
+
+/* 2.1: :focus pseudo-class
+   Applies dynamic focus ring when an input gains focus */
+.form-row input:focus {
+  border-color: #3182ce;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.35);
+}
+
+/* 2.2: :hover pseudo-class
+   Applies interactive transform and highlight when hovering */
+.striped-list li:hover {
+  background-color: #ebf4ff !important;
+  transform: translateX(6px);
+  color: #2b6cb0;
+}
+
+/* 2.3: Structural pseudo-class :nth-child(even) & :nth-child(odd)
+   Creates zebra-striped list items without manual classes */
+.striped-list {
+  list-style-position: inside;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.striped-list li {
+  padding: 12px 18px;
+  transition: all 0.25s ease;
+}
+
+.striped-list li:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.striped-list li:nth-child(odd) {
+  background-color: #f7fafc;
+}
+
+/* 2.4: :first-child and :last-child */
+.striped-list li:first-child {
+  border-left: 4px solid #48bb78;
+  font-weight: 600;
+}
+
+.striped-list li:last-child {
+  border-left: 4px solid #ed8936;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   PART 3: PSEUDO-ELEMENTS (::before, ::after)
+   ========================================================== */
+
+.badge-list {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+/* 3.1: ::before pseudo-element
+   Injects checkmark icons before each list pill */
+.pill-item {
+  background: #edf2f7;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.pill-item::before {
+  content: "✔ ";
+  color: #38a169;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* 3.2: ::after pseudo-element
+   Appends decorative tag badges */
+.pill-item::after {
+  content: " [Core]";
+  color: #a0aec0;
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+/* Quote box with decorative quotes injected via pseudo-elements */
+.quote-box {
+  position: relative;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #4a5568;
+  background: #ffffff;
+  padding: 24px 35px;
+  border-left: 5px solid #4c51bf;
+  border-radius: 8px;
+}
+
+.quote-box::before {
+  content: "“";
+  font-size: 3rem;
+  color: #cbd5e0;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-family: Georgia, serif;
+}
+
+/* ==========================================================
+   PART 4: COMBINATORS (>, +, ~, descendant)
+   ========================================================== */
+
+.combinator-family {
+  background: #f1f5f9;
+  border: 2px dashed #94a3b8;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.lead-heading {
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+/* 4.1: Adjacent Sibling Combinator (A + B)
+   Targets paragraph B immediately preceded by heading A */
+.lead-heading + .intro-p {
+  color: #047857;
+  font-weight: 700;
+  background: #d1fae5;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* 4.2: General Sibling Combinator (A ~ B)
+   Targets any paragraph B that shares the parent with A and appears after it */
+.lead-heading ~ .sub-p {
+  color: #1d4ed8;
+  background: #dbeafe;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* 4.3: Direct Child Combinator (A > B)
+   Targets only direct child <span> inside .nested-subcontainer */
+.nested-subcontainer > span {
+  display: inline-block;
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* 4.4: Descendant Combinator (A B)
+   Targets any <p> descendant inside .combinator-family regardless of nesting level */
+.combinator-family p {
+  line-height: 1.5;
+}
+
+.nested-subcontainer {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.nested-subcontainer p {
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q6: CSS Transformations Showcase</title>
+    <link rel="stylesheet" href="question6-transformations.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>CSS Transformations Showcase</h1>
+      <p>Assignment 7 &mdash; Question 6 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: 4 INTERACTIVE TRANSFORM BOXES ===== -->
+      <section class="showcase-section">
+        <h2>2D Transforms: rotate(), scale(), translate(), skew()</h2>
+        <p class="section-desc">
+          Hover over each box below to trigger its respective 2D CSS transformation.
+          All transformations activate smoothly via <code>transition: all 0.4s ease;</code>.
+        </p>
+
+        <!-- Horizontal Flexbox container for 4 transformation cards -->
+        <div class="transform-flex-row">
+
+          <!-- Transformation 1: rotate() -->
+          <div class="transform-item">
+            <div class="transform-box box-rotate">
+              <span class="box-icon">&#8635;</span>
+              <h4>rotate()</h4>
+              <p>Spin Angle</p>
+            </div>
+            <div class="transform-label">
+              <strong>rotate(20deg)</strong>
+              <p>Rotates the element clockwise around its center origin point.</p>
+            </div>
+          </div>
+
+          <!-- Transformation 2: scale() -->
+          <div class="transform-item">
+            <div class="transform-box box-scale">
+              <span class="box-icon">&#10530;</span>
+              <h4>scale()</h4>
+              <p>Grow Size</p>
+            </div>
+            <div class="transform-label">
+              <strong>scale(1.2)</strong>
+              <p>Increases element size uniformly by 20% along both X and Y axes.</p>
+            </div>
+          </div>
+
+          <!-- Transformation 3: translate() -->
+          <div class="transform-item">
+            <div class="transform-box box-translate">
+              <span class="box-icon">&#8599;</span>
+              <h4>translate()</h4>
+              <p>Shift Position</p>
+            </div>
+            <div class="transform-label">
+              <strong>translate(15px, -15px)</strong>
+              <p>Moves the element 15px right and 15px upward without altering document flow.</p>
+            </div>
+          </div>
+
+          <!-- Transformation 4: skew() -->
+          <div class="transform-item">
+            <div class="transform-box box-skew">
+              <span class="box-icon">&#9699;</span>
+              <h4>skew()</h4>
+              <p>Slant Form</p>
+            </div>
+            <div class="transform-label">
+              <strong>skew(-12deg, 4deg)</strong>
+              <p>Distorts the box along coordinate axes, creating an oblique isometric shear.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: TRANSFORMATION THEORY ===== -->
+      <section class="theory-section">
+        <h2>Transform Mechanics in CSS</h2>
+        <div class="theory-grid">
+          <div class="theory-card">
+            <h4>No Document Reflow</h4>
+            <p>
+              CSS <code>transform</code> properties are GPU-accelerated and modify visual rendering without
+              forcing browser layout recalculations (reflow), ensuring fluid 60fps performance.
+            </p>
+          </div>
+          <div class="theory-card">
+            <h4>transform-origin</h4>
+            <p>
+              By default, transforms occur from the element's geometric center (<code>50% 50%</code>).
+              This can be adjusted to corners or custom anchor coordinates.
+            </p>
+          </div>
+          <div class="theory-card">
+            <h4>Smooth Transitions</h4>
+            <p>
+              Setting <code>transition: all 0.4s ease;</code> smoothly interpolates between default and hovered states
+              for a polished user experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q6: CSS Transformations</p>
+    </footer>
+
+  </body>
+</html>

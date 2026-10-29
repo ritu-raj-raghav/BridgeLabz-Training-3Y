@@ -1,0 +1,247 @@
+/* =============================================
+   Assignment 7 - Q9: Outline and Focus Styling Form
+   Author: Ritu Raj Raghav
+   Description: Form demonstrating outline styles,
+   outline-offset, :focus color shifts, border-radius,
+   padding, subtle shadows, and uniform element spacing.
+   ============================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #319795, #38b2ac);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SHARED SECTION STYLES ---------- */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #285e61;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 30px;
+  font-size: 0.98rem;
+}
+
+/* ============================================
+   FORM LAYOUT & UNIFORM SPACING
+   ============================================ */
+.form-wrapper {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px; /* uniform vertical spacing between form groups */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;  /* uniform spacing between label, input, and hint */
+}
+
+label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #2d3748;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  font-size: 0.72rem;
+  background: #edf2f7;
+  color: #4a5568;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Base input and textarea styling */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e0;
+  border-radius: 8px;
+  /* Subtle box-shadow for neat aesthetic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  /* Smooth transition for border, background, and outline */
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: #718096;
+}
+
+.field-hint code {
+  background: #edf2f7;
+  color: #2b6cb0;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* ==========================================================
+   :focus OUTLINE STYLES & outline-offset DEMONSTRATIONS
+   ========================================================== */
+
+/* 1. Solid Outline with outline-offset */
+.input-solid:focus {
+  border-color: #3182ce;
+  background-color: #ebf8ff;
+  outline: 3px solid #3182ce;
+  outline-offset: 3px;
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.15);
+}
+
+/* 2. Dashed Outline with outline-offset */
+.input-dashed:focus {
+  border-color: #38a169;
+  background-color: #f0fff4;
+  outline: 3px dashed #38a169;
+  outline-offset: 3px;
+  box-shadow: 0 4px 12px rgba(56, 161, 105, 0.15);
+}
+
+/* 3. Double Outline with outline-offset */
+.input-double:focus {
+  border-color: #805ad5;
+  background-color: #faf5ff;
+  outline: 4px double #805ad5;
+  outline-offset: 4px;
+  box-shadow: 0 4px 12px rgba(128, 90, 213, 0.15);
+}
+
+/* 4. Groove Outline with outline-offset */
+.input-groove:focus {
+  border-color: #dd6b20;
+  background-color: #fffaf0;
+  outline: 4px groove #dd6b20;
+  outline-offset: 3px;
+  box-shadow: 0 4px 12px rgba(221, 107, 32, 0.15);
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.submit-btn {
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #319795, #2c7a7b);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(49, 151, 149, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(49, 151, 149, 0.4);
+}
+
+.submit-btn:focus {
+  outline: 3px solid #319795;
+  outline-offset: 3px;
+}
+
+/* ---------- INFO SECTION ---------- */
+.info-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  flex: 1 1 240px;
+  background: #f7fafc;
+  border-left: 4px solid #319795;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.info-card h4 {
+  font-size: 0.95rem;
+  color: #234e52;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.88rem;
+  color: #4a5568;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

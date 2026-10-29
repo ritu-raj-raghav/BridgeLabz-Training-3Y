@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q2: Height &amp; Width Practice Layout</title>
+    <link rel="stylesheet" href="question2-height-width.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Height &amp; Width Practice Layout</h1>
+      <p>Assignment 7 &mdash; Question 2 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: FLEXBOX CENTERED BOXES ===== -->
+      <section class="demo-section">
+        <h2>Demonstrating Dimensions, Units &amp; Overflow</h2>
+        <p class="section-desc">
+          The container below vertically and horizontally centers three distinct boxes using Flexbox.
+          Each box utilizes different CSS units (<code>px</code>, <code>%</code>, <code>vh</code>, <code>em</code>),
+          and demonstrates <code>min-height</code>, <code>max-width</code>, and <code>overflow</code>.
+        </p>
+
+        <!-- Flexbox container: Centered both horizontally and vertically -->
+        <div class="centered-viewport-container">
+
+          <!-- Box 1: Pixels & em units -->
+          <div class="hw-box box-pixels-em">
+            <h3>Box 1: px &amp; em</h3>
+            <span class="unit-tag">width: 260px | height: 16em</span>
+            <p class="desc">
+              Dimensions set via fixed pixels and typographic em units.
+            </p>
+            <ul class="prop-list">
+              <li><strong>width:</strong> 260px</li>
+              <li><strong>height:</strong> 16em</li>
+              <li><strong>max-width:</strong> 90%</li>
+            </ul>
+          </div>
+
+          <!-- Box 2: Percentage, min-height & overflow: auto -->
+          <div class="hw-box box-percent-overflow">
+            <h3>Box 2: % &amp; Overflow</h3>
+            <span class="unit-tag">width: 30% | min-height: 240px</span>
+            <p class="desc">
+              Demonstrates <code>overflow-y: auto</code>. Scroll inside this box to see hidden content:
+            </p>
+            <div class="scroll-content">
+              <p>
+                When content exceeds the explicit box height, <code>overflow: auto</code> provides
+                a scrollbar, preventing content from bleeding out of the container boundary.
+              </p>
+              <p>
+                This box also utilizes <code>min-height: 240px</code> and <code>max-width: 320px</code>
+                for responsive stability across varying viewports.
+              </p>
+            </div>
+          </div>
+
+          <!-- Box 3: Viewport units (vh / vw) & overflow: hidden -->
+          <div class="hw-box box-viewport-hidden">
+            <h3>Box 3: vh &amp; vw</h3>
+            <span class="unit-tag">width: 22vw | height: 32vh</span>
+            <p class="desc">
+              Sized relative to browser viewport dimensions (<code>vw</code> and <code>vh</code>).
+            </p>
+            <ul class="prop-list">
+              <li><strong>width:</strong> 22vw (max 300px)</li>
+              <li><strong>height:</strong> 32vh (min 220px)</li>
+              <li><strong>overflow:</strong> hidden (clipped)</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: SPECIFICATIONS TABLE ===== -->
+      <section class="specs-section">
+        <h2>Property Breakdown</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Role in Layout</th>
+                <th>Example in Demo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>min-height</code></td>
+                <td>Guarantees the element never shrinks below this threshold.</td>
+                <td><code>min-height: 240px;</code> on Box 2</td>
+              </tr>
+              <tr>
+                <td><code>max-width</code></td>
+                <td>Restricts expansion beyond a threshold, preventing overflow.</td>
+                <td><code>max-width: 320px;</code> on Box 2 &amp; 3</td>
+              </tr>
+              <tr>
+                <td><code>overflow</code></td>
+                <td>Controls behavior when content overflows container bounds (visible, hidden, scroll, auto).</td>
+                <td><code>overflow-y: auto;</code> on Box 2</td>
+              </tr>
+              <tr>
+                <td><code>Flexbox Center</code></td>
+                <td>Centers elements along both main and cross axes.</td>
+                <td><code>justify-content: center; align-items: center;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q2: Height &amp; Width</p>
+    </footer>
+
+  </body>
+</html>

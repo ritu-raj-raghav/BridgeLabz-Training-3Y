@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 - Q3: Gradient Background Webpage</title>
+    <link rel="stylesheet" href="question3-gradient-background.css" />
+  </head>
+  <body>
+
+    <!-- ===== FIXED HEADER ===== -->
+    <header class="fixed-header">
+      <div class="header-inner">
+        <h1>CSS Gradients &amp; Parallax Showcase</h1>
+        <span class="header-badge">Fixed Header</span>
+      </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT (SCROLLABLE BETWEEN FIXED HEADER & FOOTER) ===== -->
+    <main>
+
+      <!-- ===== SECTION 1: LINEAR GRADIENT WITH PARALLAX EFFECT ===== -->
+      <section class="gradient-section linear-section">
+        <div class="glass-card">
+          <span class="gradient-pill">Type 1</span>
+          <h2>Linear Gradient with Fixed Background (Parallax)</h2>
+          <p class="desc">
+            This section uses a multi-stop <strong>linear gradient</strong> angled at <code>135deg</code>.
+            Additionally, <code>background-attachment: fixed;</code> locks the gradient image to the viewport,
+            producing an immersive parallax-like visual effect as the user scrolls.
+          </p>
+
+          <div class="syntax-box">
+            <h4>CSS Syntax Used:</h4>
+            <code>
+              background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #4299e1 100%);<br />
+              background-attachment: fixed;
+            </code>
+          </div>
+
+          <div class="features-row">
+            <div class="feature-item">
+              <strong>Angle:</strong> 135deg (Top-Left to Bottom-Right)
+            </div>
+            <div class="feature-item">
+              <strong>Attachment:</strong> fixed (Parallax scroll effect)
+            </div>
+            <div class="feature-item">
+              <strong>Stops:</strong> Navy (#1a365d) &rarr; Royal Blue &rarr; Sky Blue
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: RADIAL GRADIENT ===== -->
+      <section class="gradient-section radial-section">
+        <div class="glass-card">
+          <span class="gradient-pill">Type 2</span>
+          <h2>Radial Gradient Background</h2>
+          <p class="desc">
+            This section features a vibrant <strong>radial gradient</strong> emanating outward
+            from the center in concentric rings, seamlessly transitioning through rich hues of magenta, deep indigo, and obsidian.
+          </p>
+
+          <div class="syntax-box">
+            <h4>CSS Syntax Used:</h4>
+            <code>
+              background: radial-gradient(circle at center, #97266d 0%, #44337a 45%, #1a202c 100%);
+            </code>
+          </div>
+
+          <div class="features-row">
+            <div class="feature-item">
+              <strong>Shape &amp; Origin:</strong> Circular at center
+            </div>
+            <div class="feature-item">
+              <strong>Spread:</strong> Concentric radiant illumination
+            </div>
+            <div class="feature-item">
+              <strong>Stops:</strong> Magenta (#97266d) &rarr; Indigo (#44337a) &rarr; Dark Slate
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: COMPARISON SUMMARY ===== -->
+      <section class="gradient-section summary-section">
+        <div class="glass-card">
+          <h2>Linear vs. Radial Gradients Summary</h2>
+          <div class="comparison-grid">
+            <div class="comp-col">
+              <h3>Linear Gradient</h3>
+              <ul>
+                <li>Transitions smoothly along a straight vector line.</li>
+                <li>Can be directed via angles (e.g. <code>45deg</code>, <code>135deg</code>) or keywords (<code>to right</code>, <code>to bottom</code>).</li>
+                <li>Combines with <code>background-attachment: fixed</code> for fixed-position background effects.</li>
+              </ul>
+            </div>
+            <div class="comp-col">
+              <h3>Radial Gradient</h3>
+              <ul>
+                <li>Transitions colors outward from a designated origin point.</li>
+                <li>Shapes include <code>circle</code> and <code>ellipse</code>.</li>
+                <li>Origins can be centered or positioned using keywords (e.g. <code>at top left</code>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FIXED FOOTER ===== -->
+    <footer class="fixed-footer">
+      <div class="footer-inner">
+        <p>BridgeLabz Training &mdash; CSS Assignment 7 &mdash; Q3: Linear &amp; Radial Gradients</p>
+        <span class="footer-badge">Fixed Footer</span>
+      </div>
+    </footer>
+
+  </body>
+</html>
