@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q1: Webpage Demonstrating Pseudo-Classes</title>
+    <link rel="stylesheet" href="question1-pseudo-classes.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>CSS Pseudo-Classes Demonstration</h1>
+      <p>Assignment 8 &mdash; Question 1 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: PSEUDO-CLASSES IN A NEAT FLEXBOX ROW ===== -->
+      <section class="demo-section">
+        <h2>Interactive Pseudo-Classes (:hover, :focus, :active, :nth-child())</h2>
+        <p class="section-desc">
+          Pseudo-classes target elements based on their state or structural position.
+          Below are interactive links, buttons, and list items neatly aligned in one Flexbox row
+          with explanatory text beside each live demonstration.
+        </p>
+
+        <!-- Flexbox row aligning all examples neatly -->
+        <div class="pseudo-flex-row">
+
+          <!-- Card 1: :hover on Links -->
+          <div class="pseudo-card">
+            <h3>1. :hover on Links</h3>
+            <p class="explanation">
+              Triggers when user points cursor over the link. Notice the background fill,
+              color inversion, and border lift.
+            </p>
+            <div class="interactive-area">
+              <a href="#" class="demo-link" onclick="return false;">Hover Over Me</a>
+            </div>
+            <code>a:hover { background: #3182ce; color: #fff; }</code>
+          </div>
+
+          <!-- Card 2: :focus on Form Input / Button -->
+          <div class="pseudo-card">
+            <h3>2. :focus on Interactive Input</h3>
+            <p class="explanation">
+              Triggers when the element receives focus via mouse click or keyboard Tab.
+              Notice the illuminated ring.
+            </p>
+            <div class="interactive-area">
+              <input type="text" class="demo-input" placeholder="Click or Tab here" />
+            </div>
+            <code>input:focus { border-color: #38a169; outline: 3px solid #9ae6b4; }</code>
+          </div>
+
+          <!-- Card 3: :active on Action Buttons -->
+          <div class="pseudo-card">
+            <h3>3. :active on Buttons</h3>
+            <p class="explanation">
+              Activates at the exact instant the element is being clicked/pressed down by the user.
+            </p>
+            <div class="interactive-area">
+              <button class="demo-btn">Click &amp; Hold Me</button>
+            </div>
+            <code>button:active { transform: scale(0.96); background: #9b2c2c; }</code>
+          </div>
+
+          <!-- Card 4: :nth-child() on List Items -->
+          <div class="pseudo-card">
+            <h3>4. :nth-child() on Lists</h3>
+            <p class="explanation">
+              Selects child elements according to formulaic index patterns (e.g. <code>even</code> or <code>odd</code>).
+            </p>
+            <div class="interactive-area">
+              <ul class="demo-list">
+                <li>Item 1 (Odd: #ebf8ff)</li>
+                <li>Item 2 (Even: #e6fffa)</li>
+                <li>Item 3 (Odd: #ebf8ff)</li>
+                <li>Item 4 (Even: #e6fffa)</li>
+              </ul>
+            </div>
+            <code>li:nth-child(even) { background: #e6fffa; }</code>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: STATE TRANSITION OVERVIEW ===== -->
+      <section class="summary-section">
+        <h2>Pseudo-Class State Progression</h2>
+        <div class="states-grid">
+          <div class="state-item">
+            <h4>Default State</h4>
+            <p>Resting baseline appearance when no user interaction or condition is met.</p>
+          </div>
+          <div class="state-item">
+            <h4>:hover State</h4>
+            <p>Cursor enters bounding box. Provides predictive feedback that element is interactive.</p>
+          </div>
+          <div class="state-item">
+            <h4>:focus State</h4>
+            <p>Target element is ready for keyboard inputs and screen reader navigation.</p>
+          </div>
+          <div class="state-item">
+            <h4>:active State</h4>
+            <p>Physical mouse down or touch press down. Confirms user command execution.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q1: Pseudo-Classes</p>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,209 @@
+/* ==========================================================
+   Assignment 8 - Q3: Image Showcase Layout
+   Author: Ritu Raj Raghav
+   Description: Six images displayed in Grid, hover scale (1.1),
+   dark semi-transparent overlay, rounded corners, box-shadow,
+   <figcaption> captions, and responsive single-column below 700px.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  color: #ffffff;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+.gallery-section {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.gallery-section h2 {
+  font-size: 1.6rem;
+  color: #2b6cb0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================
+   IMAGE SHOWCASE GRID LAYOUT (6 IMAGES)
+   ========================================================== */
+.image-grid {
+  display: grid;
+  /* Multi-column grid for desktops and tablets */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card figure container */
+.showcase-card {
+  background: #ffffff;
+  /* Rounded corners and box-shadow to make images modern */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Image wrapper holds the image and hover overlay */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden; /* ensures scale(1.1) stays inside rounded bounds */
+}
+
+/* The image element */
+.demo-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* Smooth transition for hover scaling */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* REQUIRED SPECIFICATION: On hover scale up (transform: scale(1.1)) */
+.showcase-card:hover .demo-img {
+  transform: scale(1.1);
+}
+
+/* ==========================================================
+   SEMI-TRANSPARENT OVERLAY (DARKEN ON HOVER)
+   ========================================================== */
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark semi-transparent overlay */
+  background: rgba(0, 0, 0, 0.52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.overlay-text {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border: 1.5px solid #ffffff;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  transform: translateY(10px);
+  transition: transform 0.35s ease;
+}
+
+/* Overlay appearance on hover */
+.showcase-card:hover .dark-overlay {
+  opacity: 1;
+}
+
+.showcase-card:hover .overlay-text {
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   CAPTION VIA <figcaption>
+   ========================================================== */
+figcaption {
+  padding: 16px 20px;
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.5;
+  background-color: #ffffff;
+  border-top: 1px solid #edf2f7;
+  flex: 1;
+}
+
+figcaption strong {
+  color: #2b6cb0;
+}
+
+/* ==========================================================
+   RESPONSIVE: STACK IMAGES IN 1 COLUMN BELOW 700PX
+   ========================================================== */
+@media (max-width: 992px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  /* REQUIRED SPECIFICATION: Stack in one column below 700px */
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-section {
+    padding: 24px 16px;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}

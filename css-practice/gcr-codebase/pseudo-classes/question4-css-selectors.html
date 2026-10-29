@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q4: CSS Selectors Practice Page</title>
+    <link rel="stylesheet" href="question4-css-selectors.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>CSS Selectors Practice &amp; Taxonomy</h1>
+      <p>Assignment 8 &mdash; Question 4 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION 1: ELEMENT, CLASS & ID SELECTORS ===== -->
+      <section class="selectors-section">
+        <h2>1. Basic Selectors (Element, Class, and ID)</h2>
+        <p class="section-desc">
+          CSS basic selectors match elements according to tag name, reusable classes, or unique identifiers.
+        </p>
+
+        <div class="demo-card">
+          <!-- Element selector targets standard <p> -->
+          <p>Standard paragraph element styled uniformly via the <code>p</code> element selector.</p>
+
+          <!-- Class selector targets .highlight-box -->
+          <div class="highlight-box">
+            <h4>.highlight-box (Class Selector)</h4>
+            <p>Classes can be reused across any number of HTML elements to enforce design consistency.</p>
+          </div>
+
+          <!-- ID selector targets #featured-notice -->
+          <div id="featured-notice">
+            <h4>#featured-notice (ID Selector)</h4>
+            <p>ID selectors possess higher specificity and target a strictly unique element in the DOM.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: ATTRIBUTE SELECTORS ===== -->
+      <section class="selectors-section">
+        <h2>2. Attribute Selectors (<code>[target="_blank"]</code>, <code>[download]</code>)</h2>
+        <p class="section-desc">
+          Attribute selectors target elements matching attribute existence or explicit values.
+        </p>
+
+        <div class="demo-card">
+          <ul class="attribute-link-list">
+            <li>
+              <a href="https://developer.mozilla.org" target="_blank">External MDN Documentation (target="_blank" icon)</a>
+            </li>
+            <li>
+              <a href="/internal/docs">Internal Navigation Link (no target attribute)</a>
+            </li>
+            <li>
+              <a href="assignment8-starter.zip" download>Download Codebase Assets ([download] attribute)</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: COMBINATORS (>, +, ~, DESCENDANT) ===== -->
+      <section class="selectors-section">
+        <h2>3. Combinator Relationships</h2>
+        <p class="section-desc">
+          Combinators articulate precise relational paths between DOM nodes.
+        </p>
+
+        <div class="combinator-family-box">
+          <h3 class="combinator-lead">Lead Heading Reference</h3>
+
+          <!-- Adjacent Sibling: h3 + p -->
+          <p class="adjacent-p">Adjacent Sibling: Immediately follows the <code>h3</code> heading (<code>h3 + p</code>).</p>
+
+          <!-- General Sibling: h3 ~ p -->
+          <p class="sibling-p">General Sibling: Shares the parent and appears after heading (<code>h3 ~ p</code>).</p>
+
+          <div class="child-subgroup">
+            <!-- Direct child: .child-subgroup > span -->
+            <span class="direct-child-span">Direct Child: <code>.child-subgroup &gt; span</code></span>
+            <div>
+              <!-- Descendant: .combinator-family-box em -->
+              <em>Deeply Nested Descendant: <code>.combinator-family-box em</code></em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q4: CSS Selectors Practice</p>
+    </footer>
+
+  </body>
+</html>

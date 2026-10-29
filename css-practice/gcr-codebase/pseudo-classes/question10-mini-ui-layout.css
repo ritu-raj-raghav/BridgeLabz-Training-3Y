@@ -1,0 +1,299 @@
+/* ==========================================================
+   Assignment 8 - Q10: Complete Mini User Interface Layout
+   Author: Ritu Raj Raghav
+   Description: Compact webpage containing header, main content card,
+   and footer. Main card includes small image, form, and buttons
+   with consistent box-sizing, shadows, border styles, hover/focus
+   pseudo-classes, and responsive Flexbox alignment.
+   ========================================================== */
+
+/* ---------- 1. GLOBAL CONSISTENT BOX-SIZING & RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Consistent box-sizing across all elements */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================
+   2. HEADER
+   ========================================================== */
+.app-header {
+  background: #ffffff;
+  border-bottom: 2px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  padding: 14px 20px;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: #4f46e5;
+}
+
+.user-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4f46e5;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ==========================================================
+   3. MAIN CONTENT CARD
+   ========================================================== */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.compact-card {
+  max-width: 680px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Consistent shadow */
+  padding: 35px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  transition: box-shadow 0.3s ease;
+}
+
+.compact-card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- CARD HERO (IMAGE & HEADING) ---------- */
+.card-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1.5px solid #f1f5f9;
+  padding-bottom: 22px;
+}
+
+.image-wrapper {
+  flex-shrink: 0;
+}
+
+/* Small image element */
+.profile-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 3px solid #e0e7ff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.hero-info h2 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.hero-info p {
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+/* ==========================================================
+   4. FORM LAYOUT & UNIFORM INPUTS
+   ========================================================== */
+.enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Consistent Input, Select, and Textarea styling */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  /* Smooth transitions */
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* :hover effect on inputs */
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #94a3b8;
+}
+
+/* :focus effect on inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background-color: #f8fafc;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================
+   5. BUTTONS BAR (FLEXBOX ALIGNMENT & PSEUDO-CLASSES)
+   ========================================================== */
+.buttons-bar {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1.5px solid #f1f5f9;
+  padding-top: 18px;
+}
+
+.btn {
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease;
+}
+
+/* Submit button with hover and active */
+.btn-submit {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+.btn-submit:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+}
+
+.btn-submit:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Secondary button */
+.btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+  border-color: #94a3b8;
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================
+   6. RESPONSIVENESS
+   ========================================================== */
+@media (max-width: 600px) {
+  .compact-card {
+    padding: 24px 20px;
+  }
+
+  .form-group {
+    flex: 1 1 100%;
+  }
+
+  .card-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttons-bar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   7. FOOTER
+   ========================================================== */
+.app-footer {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}

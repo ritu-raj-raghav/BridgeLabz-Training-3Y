@@ -1,0 +1,307 @@
+/* ==========================================================
+   Assignment 8 - Q6: CSS Animation Demonstration Page
+   Author: Ritu Raj Raghav
+   Description: Demonstrates @keyframes animations (moving box,
+   bouncing ball, color-changing text) with animation-delay,
+   animation-iteration-count, animation-direction,
+   ease-in-out timing, and vertical/horizontal Flexbox centering.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #6b46c1, #805ad5);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SECTION STYLES ---------- */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #553c9e;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================
+   FLEXBOX ROW: CENTERS ANIMATIONS VERTICALLY & HORIZONTALLY
+   ========================================================== */
+.animation-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  flex-wrap: wrap;
+  gap: 30px;
+  background: #f8fafc;
+  padding: 40px 20px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e0;
+}
+
+.animation-card {
+  flex: 1 1 300px;
+  max-width: 340px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animation-card h3 {
+  font-size: 1.15rem;
+  color: #2d3748;
+  margin-bottom: 16px;
+}
+
+/* Local viewing stage for each animated element */
+.stage-viewport {
+  width: 100%;
+  height: 180px;
+  background: #edf2f7;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anim-specs {
+  margin-top: 18px;
+  width: 100%;
+  background: #f7fafc;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 0.82rem;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.anim-name {
+  display: block;
+  font-family: 'Consolas', monospace;
+  font-weight: 700;
+  color: #6b46c1;
+  margin-bottom: 6px;
+}
+
+/* ==========================================================
+   1. MOVING & PULSING BOX ANIMATION
+   ========================================================== */
+@keyframes slidePulse {
+  0% {
+    transform: translateX(-60px) scale(0.85);
+    background-color: #3182ce;
+    border-radius: 6px;
+  }
+  50% {
+    transform: translateX(0px) scale(1.15) rotate(15deg);
+    background-color: #805ad5;
+    border-radius: 20px;
+  }
+  100% {
+    transform: translateX(60px) scale(0.85);
+    background-color: #e53e3e;
+    border-radius: 6px;
+  }
+}
+
+.moving-box {
+  width: 55px;
+  height: 55px;
+  background-color: #3182ce;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  /* REQUIRED SPECIFICATION: @keyframes, delay, iteration-count, direction, ease-in-out */
+  animation-name: slidePulse;
+  animation-duration: 2.4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* ==========================================================
+   2. BOUNCING BALL ANIMATION
+   ========================================================== */
+@keyframes bounceBall {
+  0% {
+    transform: translateY(-50px) scaleX(0.9) scaleY(1.1);
+  }
+  85% {
+    transform: translateY(35px) scaleX(1) scaleY(1);
+  }
+  100% {
+    transform: translateY(40px) scaleX(1.3) scaleY(0.7); /* Squash on impact */
+  }
+}
+
+@keyframes shadowPulse {
+  0% {
+    transform: scaleX(0.4);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scaleX(1.2);
+    opacity: 0.6;
+  }
+}
+
+.bounce-viewport {
+  flex-direction: column;
+}
+
+.bouncing-ball {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 35% 35%, #fc8181, #c53030);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation-name: bounceBall;
+  animation-duration: 1.1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+}
+
+.ball-shadow {
+  width: 45px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 25px;
+  animation-name: shadowPulse;
+  animation-duration: 1.1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* ==========================================================
+   3. COLOR-CHANGING CHROMA TEXT ANIMATION
+   ========================================================== */
+@keyframes chromaShift {
+  0% {
+    color: #3182ce;
+    text-shadow: 0 0 10px rgba(49, 130, 206, 0.4);
+    letter-spacing: 2px;
+  }
+  33% {
+    color: #38a169;
+    text-shadow: 0 0 15px rgba(56, 161, 105, 0.5);
+    letter-spacing: 4px;
+  }
+  66% {
+    color: #d69e2e;
+    text-shadow: 0 0 15px rgba(214, 158, 46, 0.5);
+    letter-spacing: 3px;
+  }
+  100% {
+    color: #e53e3e;
+    text-shadow: 0 0 20px rgba(229, 62, 62, 0.6);
+    letter-spacing: 6px;
+  }
+}
+
+.color-changing-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  animation-name: chromaShift;
+  animation-duration: 3.2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+/* ---------- SPECS GRID ---------- */
+.specs-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.spec-card {
+  flex: 1 1 240px;
+  background: #f7fafc;
+  border-left: 4px solid #6b46c1;
+  padding: 18px;
+  border-radius: 0 8px 8px 0;
+}
+
+.spec-card h4 {
+  font-size: 0.95rem;
+  color: #553c9e;
+  margin-bottom: 6px;
+}
+
+.spec-card p {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

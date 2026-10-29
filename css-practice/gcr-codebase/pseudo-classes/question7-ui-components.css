@@ -1,0 +1,290 @@
+/* ==========================================================
+   Assignment 8 - Q7: User Interface Components Page
+   Author: Ritu Raj Raghav
+   Description: UI components (search bar, buttons, dropdown)
+   with consistent padding, border-radius, box-shadow, :focus,
+   :hover, card-like container, and soft background gradient.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Soft background gradient applied across viewport */
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #fce7f3 100%);
+  color: #2d3748;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 35px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #312e81;
+  margin-bottom: 6px;
+}
+
+header p {
+  font-size: 0.98rem;
+  color: #4b5563;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 950px;
+  width: 100%;
+  margin: 45px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* ==========================================================
+   CARD-LIKE CONTAINER ALIGNED USING FLEXBOX
+   ========================================================== */
+.ui-panel-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  /* Consistent elevation box-shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 16px;
+}
+
+.panel-header h2 {
+  font-size: 1.6rem;
+  color: #1e1b4b;
+}
+
+.status-indicator {
+  background: #e0e7ff;
+  color: #4338ca;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.panel-desc {
+  font-size: 0.96rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   FLEXBOX TOOLBAR WITH SEARCH, DROPDOWN & BUTTONS
+   ========================================================== */
+.components-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: #f9fafb;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ---------- 1. SEARCH BAR COMPONENT ---------- */
+.search-component {
+  flex: 2 1 240px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 1.1rem;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 42px; /* Consistent padding */
+  border-radius: 8px;           /* Consistent border-radius */
+  border: 1.5px solid #d1d5db;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1f2937;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+/* :focus state highlight */
+.search-input:focus {
+  border-color: #4f46e5;
+  background: #ffffff;
+  outline: 3px solid rgba(79, 70, 229, 0.25);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+/* ---------- 2. DROPDOWN MENU COMPONENT ---------- */
+.dropdown-component {
+  flex: 1 1 180px;
+}
+
+.styled-select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 0.92rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+/* Dropdown :hover and :focus highlights */
+.styled-select:hover {
+  border-color: #9ca3af;
+  background-color: #f3f4f6;
+}
+
+.styled-select:focus {
+  border-color: #4f46e5;
+  outline: 3px solid rgba(79, 70, 229, 0.25);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+/* ---------- 3. BUTTONS GROUP ---------- */
+.buttons-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ui-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.btn-apply {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.btn-apply:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+}
+
+.btn-apply:focus {
+  outline: 3px solid #818cf8;
+  outline-offset: 2px;
+}
+
+.btn-reset {
+  background: #ffffff;
+  color: #4b5563;
+  border-color: #d1d5db;
+}
+
+.btn-reset:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+  border-color: #9ca3af;
+}
+
+.btn-reset:focus {
+  outline: 3px solid #9ca3af;
+  outline-offset: 2px;
+}
+
+/* ---------- RESULTS PREVIEW ---------- */
+.results-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+.result-info h4 {
+  font-size: 1rem;
+  color: #1e1b4b;
+  margin-bottom: 2px;
+}
+
+.result-info p {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.result-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4f46e5;
+  background: #eef2ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #1e1b4b;
+  color: #c7d2fe;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

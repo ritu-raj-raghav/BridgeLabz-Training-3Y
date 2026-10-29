@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q5: Styled Button Collection</title>
+    <link rel="stylesheet" href="question5-styled-buttons.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Modern Button Design System</h1>
+      <p>Assignment 8 &mdash; Question 5 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: BUTTON COLLECTION ===== -->
+      <section class="buttons-section">
+        <h2>Interactive Button Showcase</h2>
+        <p class="section-desc">
+          Below is a cohesive button collection featuring <strong>Primary</strong>, <strong>Secondary</strong>,
+          <strong>Outline</strong>, and <strong>Disabled</strong> variants. Experience dynamic <code>:hover</code>,
+          <code>:active</code>, <code>:focus</code>, and <code>:disabled</code> states aligned with consistent
+          spacing using Flexbox.
+        </p>
+
+        <!-- Flexbox container ensuring consistent spacing and alignment -->
+        <div class="buttons-flex-row">
+
+          <!-- 1. Primary Button -->
+          <button type="button" class="btn btn-primary">
+            Primary Action
+          </button>
+
+          <!-- 2. Secondary Button -->
+          <button type="button" class="btn btn-secondary">
+            Secondary Action
+          </button>
+
+          <!-- 3. Outline Button -->
+          <button type="button" class="btn btn-outline">
+            Outline Variant
+          </button>
+
+          <!-- 4. Disabled Button -->
+          <button type="button" class="btn btn-disabled" disabled>
+            Disabled State
+          </button>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: STATE INVENTORY ===== -->
+      <section class="state-inventory-section">
+        <h2>Button States &amp; Design Token Specifications</h2>
+        <div class="state-grid">
+          <div class="state-card">
+            <h4>:hover Interaction</h4>
+            <p>Elevates the button via <code>transform: translateY(-2px)</code> and intensifies drop shadow.</p>
+          </div>
+          <div class="state-card">
+            <h4>:active Interaction</h4>
+            <p>Simulates physical depression using <code>transform: translateY(1px) scale(0.98)</code>.</p>
+          </div>
+          <div class="state-card">
+            <h4>:focus State</h4>
+            <p>Emits an accessible focus ring with <code>outline-offset: 3px</code> for keyboard navigation.</p>
+          </div>
+          <div class="state-card">
+            <h4>:disabled State</h4>
+            <p>Neutralizes user interaction via <code>cursor: not-allowed</code>, reduced opacity, and grayscale.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q5: Styled Button Collection</p>
+    </footer>
+
+  </body>
+</html>

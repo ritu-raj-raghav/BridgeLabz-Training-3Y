@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q8: Box-Sizing Comparison Page</title>
+    <link rel="stylesheet" href="question8-box-sizing.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Box-Sizing Comparison Page</h1>
+      <p>Assignment 8 &mdash; Question 8 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: SIDE-BY-SIDE BOX-SIZING COMPARISON ===== -->
+      <section class="comparison-section">
+        <h2>content-box vs. border-box</h2>
+        <p class="section-desc">
+          Both boxes below have the <strong>exact same declared CSS properties</strong>:
+          <code>width: 240px</code>, <code>padding: 25px</code>, and <code>border: 6px solid</code>.
+          Notice how <code>box-sizing</code> completely alters the final rendered geometry on screen.
+        </p>
+
+        <!-- Centered flexbox container -->
+        <div class="boxes-stage">
+
+          <!-- Box 1: Default (content-box) -->
+          <div class="box-wrapper">
+            <span class="box-tag tag-default">Default: content-box</span>
+            <div class="demo-box box-contentbox">
+              <h3>Declared: 240px</h3>
+              <p>+ 25px padding &times; 2</p>
+              <p>+ 6px border &times; 2</p>
+              <div class="computed-badge">
+                Actual Rendered: <strong>302px</strong>
+              </div>
+            </div>
+            <p class="box-calc">
+              Width applies <em>only</em> to content. Padding and border expand outward, enlarging the element.
+            </p>
+          </div>
+
+          <!-- Box 2: border-box -->
+          <div class="box-wrapper">
+            <span class="box-tag tag-borderbox">Modern: border-box</span>
+            <div class="demo-box box-borderbox">
+              <h3>Declared: 240px</h3>
+              <p>&ndash; 25px padding &times; 2</p>
+              <p>&ndash; 6px border &times; 2</p>
+              <div class="computed-badge">
+                Actual Rendered: <strong>240px</strong>
+              </div>
+            </div>
+            <p class="box-calc">
+              Padding and border are absorbed <em>inside</em> the 240px boundary. Sizing is predictable.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: FORMULA EXPLANATION ===== -->
+      <section class="formula-section">
+        <h2>Mathematical Formulas Compared</h2>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h4>content-box Total Width Formula</h4>
+            <code>Total Width = width + padding-left + padding-right + border-left + border-right</code>
+            <p>240px + 25px + 25px + 6px + 6px = <strong>302px</strong></p>
+          </div>
+          <div class="formula-card">
+            <h4>border-box Total Width Formula</h4>
+            <code>Total Width = declared width (Content absorbs remainder)</code>
+            <p>Total = <strong>240px</strong> (Content area = 240 - 50 - 12 = 178px)</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q8: Box-Sizing Comparison</p>
+    </footer>
+
+  </body>
+</html>

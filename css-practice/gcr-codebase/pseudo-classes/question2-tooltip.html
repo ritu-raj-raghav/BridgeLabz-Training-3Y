@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q2: Tooltip Demonstration Page</title>
+    <link rel="stylesheet" href="question2-tooltip.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>CSS-Only Tooltip Demonstration</h1>
+      <p>Assignment 8 &mdash; Question 2 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: CENTERED TOOLTIP DEMONSTRATION ===== -->
+      <section class="tooltip-section">
+        <h2>Interactive Hover Tooltips</h2>
+        <p class="section-desc">
+          Hover over each icon or keyword below. Every tooltip is crafted exclusively with pure CSS
+          using <code>position: absolute;</code> and smooth <code>opacity</code> transitions
+          (<code>transition: 0.3s ease-in-out;</code>). Notice each tooltip hovers precisely above its parent element.
+        </p>
+
+        <!-- Flexbox container centering all examples on the page -->
+        <div class="centered-tooltip-stage">
+
+          <!-- Example 1: Notification Bell Icon -->
+          <div class="tooltip-wrapper">
+            <button class="icon-trigger" aria-label="Notifications">
+              <span class="emoji-icon">&#128276;</span>
+              <span class="trigger-label">Alerts</span>
+            </button>
+            <span class="tooltip-box">You have 3 unread notifications</span>
+          </div>
+
+          <!-- Example 2: Keyword Word in Context -->
+          <div class="tooltip-wrapper">
+            <span class="word-trigger">
+              CSS Box Model
+            </span>
+            <span class="tooltip-box">Content, Padding, Border &amp; Margin layers</span>
+          </div>
+
+          <!-- Example 3: Star Favorite Action Badge -->
+          <div class="tooltip-wrapper">
+            <button class="icon-trigger badge-trigger" aria-label="Favorites">
+              <span class="emoji-icon">&#11088;</span>
+              <span class="trigger-label">Star Project</span>
+            </button>
+            <span class="tooltip-box">Save repository to your favorites</span>
+          </div>
+
+          <!-- Example 4: User Profile Avatar -->
+          <div class="tooltip-wrapper">
+            <div class="avatar-trigger">
+              <span>RR</span>
+            </div>
+            <span class="tooltip-box">Ritu Raj Raghav (Online)</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: TECHNICAL IMPLEMENTATION GUIDE ===== -->
+      <section class="guide-section">
+        <h2>Pure CSS Tooltip Architecture</h2>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <h4>Parent: position: relative;</h4>
+            <p>
+              Establishes a local coordinate containment block so child tooltips calculate absolute offsets
+              relative to their trigger icon.
+            </p>
+          </div>
+          <div class="guide-card">
+            <h4>Child: position: absolute;</h4>
+            <p>
+              Placed above the element using <code>bottom: 125%; left: 50%; transform: translateX(-50%);</code>
+              to ensure perfect horizontal centering.
+            </p>
+          </div>
+          <div class="guide-card">
+            <h4>Smooth Opacity Fade</h4>
+            <p>
+              Employs <code>opacity: 0;</code> and <code>transition: 0.3s ease-in-out;</code>.
+              On <code>:hover</code>, opacity transitions to 1 without layout shifts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q2: Tooltip Demonstration</p>
+    </footer>
+
+  </body>
+</html>

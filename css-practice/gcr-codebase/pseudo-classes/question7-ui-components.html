@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q7: User Interface Components Page</title>
+    <link rel="stylesheet" href="question7-ui-components.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Modern UI Components Card</h1>
+      <p>Assignment 8 &mdash; Question 7 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== MAIN CARD-LIKE CONTAINER ALIGNED USING FLEXBOX ===== -->
+      <section class="ui-panel-card">
+        <div class="panel-header">
+          <h2>Application Control Hub</h2>
+          <span class="status-indicator">Active Workspace</span>
+        </div>
+
+        <p class="panel-desc">
+          A cohesive UI containing an interactive search bar, action buttons, and a styled dropdown menu.
+          All components maintain consistent padding, border-radius, and elevation shadows against a soft background gradient.
+        </p>
+
+        <!-- Components Flexbox Toolbar -->
+        <div class="components-toolbar">
+
+          <!-- 1. Search Bar Component -->
+          <div class="search-component">
+            <span class="search-icon">&#128269;</span>
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search components, tokens, or files..."
+            />
+          </div>
+
+          <!-- 2. Dropdown Menu Component -->
+          <div class="dropdown-component">
+            <select class="styled-select" aria-label="Filter Categories">
+              <option value="" disabled selected>Filter By Category</option>
+              <option value="css">CSS Architecture</option>
+              <option value="flexbox">Flexbox &amp; Grid</option>
+              <option value="pseudo">Pseudo-Classes</option>
+              <option value="animations">CSS Animations</option>
+            </select>
+          </div>
+
+          <!-- 3. Button Actions Component -->
+          <div class="buttons-group">
+            <button type="button" class="ui-btn btn-apply">Apply Filters</button>
+            <button type="button" class="ui-btn btn-reset">Reset</button>
+          </div>
+
+        </div>
+
+        <!-- Sample Dynamic Data Preview Results -->
+        <div class="results-preview">
+          <div class="result-item">
+            <div class="result-info">
+              <h4>Modern Box Model System</h4>
+              <p>Demonstration of padding, margin, border-box, and outlines.</p>
+            </div>
+            <span class="result-tag">Assignment 7</span>
+          </div>
+
+          <div class="result-item">
+            <div class="result-info">
+              <h4>Interactive Pseudo-Class Suite</h4>
+              <p>Dynamic hover, active, focus, and structural nth-child patterns.</p>
+            </div>
+            <span class="result-tag">Assignment 8</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q7: UI Components</p>
+    </footer>
+
+  </body>
+</html>

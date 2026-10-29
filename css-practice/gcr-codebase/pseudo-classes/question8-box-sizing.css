@@ -1,0 +1,251 @@
+/* ==========================================================
+   Assignment 8 - Q8: Box-Sizing Comparison Page
+   Author: Ritu Raj Raghav
+   Description: Side-by-side comparison of default content-box
+   and box-sizing: border-box with equal width and padding,
+   contrasting background colors, centered Flexbox layout, and responsiveness.
+   ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  /* Note: Reset preserves explicit box-sizing demonstration on test boxes */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #2b6cb0, #2c5282);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ---------- SHARED SECTION STYLES ---------- */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #2b6cb0;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.section-desc {
+  color: #4a5568;
+  margin-bottom: 35px;
+  font-size: 0.98rem;
+}
+
+section code {
+  background: #edf2f7;
+  color: #2b6cb0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================
+   CENTERED FLEXBOX STAGE: SIDE-BY-SIDE COMPARISON
+   ========================================================== */
+.boxes-stage {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 30px 10px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e0;
+}
+
+.box-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 340px;
+}
+
+.box-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.tag-default {
+  background: #fed7d7;
+  color: #9b2c2c;
+}
+
+.tag-borderbox {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+/* Base properties declared identically for both boxes */
+.demo-box {
+  /* REQUIRED SPECIFICATION: Equal declared width, padding, and border */
+  width: 240px;
+  padding: 25px;
+  border: 6px solid;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.demo-box:hover {
+  transform: translateY(-4px);
+}
+
+.demo-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.demo-box p {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.computed-badge {
+  margin-top: 14px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.box-calc {
+  margin-top: 16px;
+  font-size: 0.86rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   1. BOX 1: DEFAULT (content-box) - Contrasting Crimson
+   ========================================================== */
+.box-contentbox {
+  /* REQUIRED SPECIFICATION: default box-sizing */
+  box-sizing: content-box;
+  background-color: #fff5f5;
+  border-color: #e53e3e;
+  color: #742a2a;
+}
+
+/* ==========================================================
+   2. BOX 2: border-box - Contrasting Emerald
+   ========================================================== */
+.box-borderbox {
+  /* REQUIRED SPECIFICATION: box-sizing: border-box; */
+  box-sizing: border-box;
+  background-color: #f0fff4;
+  border-color: #38a169;
+  color: #22543d;
+}
+
+/* ---------- FORMULA SECTION ---------- */
+.formula-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.formula-card {
+  flex: 1 1 300px;
+  background: #f7fafc;
+  border-left: 4px solid #2b6cb0;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.formula-card h4 {
+  font-size: 1rem;
+  color: #2b6cb0;
+  margin-bottom: 10px;
+}
+
+.formula-card code {
+  display: block;
+  margin-bottom: 8px;
+  background: #edf2f7;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.formula-card p {
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+/* ==========================================================
+   RESPONSIVENESS FOR SMALLER SCREENS
+   ========================================================== */
+@media (max-width: 650px) {
+  .boxes-stage {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .demo-box {
+    max-width: 100%;
+  }
+
+  section {
+    padding: 24px 16px;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

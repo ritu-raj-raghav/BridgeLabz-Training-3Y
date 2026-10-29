@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q9: Combined Effects Demonstration</title>
+    <link rel="stylesheet" href="question9-combined-effects.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Combined Effects Demonstration</h1>
+      <p>Assignment 8 &mdash; Question 9 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: DISTRIBUTED COMBINED EFFECTS EXAMPLES ===== -->
+      <section class="effects-section">
+        <h2>Synthesizing Pseudo-Classes, Transitions &amp; Transforms</h2>
+        <p class="section-desc">
+          Each card below demonstrates the combined power of CSS <strong>pseudo-classes</strong> (<code>:hover</code>, <code>:active</code>),
+          <strong>transitions</strong> (<code>all 0.35s ease</code>), and <strong>transformations</strong> (<code>scale</code>, <code>translate</code>, <code>rotate</code>, <code>skew</code>)
+          amplified with subtle, reactive box-shadows. Examples are distributed evenly across the page via Flexbox.
+        </p>
+
+        <!-- Flexbox container distributing multiple examples evenly -->
+        <div class="effects-flex-container">
+
+          <!-- Example 1: Growing Glow Button -->
+          <div class="effect-card">
+            <span class="effect-badge">scale() + Color</span>
+            <h3>1. Interactive Grow Button</h3>
+            <p>On hover, grows by 8%, transitions to royal indigo, and deepens its shadow.</p>
+            <div class="interactive-stage">
+              <button class="combo-btn btn-grow">
+                Hover to Grow &#10530;
+              </button>
+            </div>
+            <div class="effect-formula">
+              <code>transform: scale(1.08) translateY(-3px);</code>
+            </div>
+          </div>
+
+          <!-- Example 2: Tilt & Lift Action Tile -->
+          <div class="effect-card">
+            <span class="effect-badge">rotate() + Lift</span>
+            <h3>2. Dynamic Tilt Tile</h3>
+            <p>Subtly tilts by 4deg while lifting off the canvas with an intensified colored glow.</p>
+            <div class="interactive-stage">
+              <div class="combo-tile tile-rotate">
+                <span class="tile-icon">&#128640;</span>
+                <h4>Velocity</h4>
+              </div>
+            </div>
+            <div class="effect-formula">
+              <code>transform: rotate(4deg) translateY(-6px);</code>
+            </div>
+          </div>
+
+          <!-- Example 3: Skewed Gradient Badge -->
+          <div class="effect-card">
+            <span class="effect-badge">skew() + Gradient</span>
+            <h3>3. Oblique Shear Badge</h3>
+            <p>Applies an isometric horizontal shear and expands from emerald to bright teal.</p>
+            <div class="interactive-stage">
+              <div class="combo-badge badge-skew">
+                <span>Fast Forward &rarr;</span>
+              </div>
+            </div>
+            <div class="effect-formula">
+              <code>transform: skew(-6deg) scale(1.05);</code>
+            </div>
+          </div>
+
+          <!-- Example 4: Expandable Metric Counter -->
+          <div class="effect-card">
+            <span class="effect-badge">translate() + Glow</span>
+            <h3>4. Floating Metric Stat</h3>
+            <p>Lifts upward while radiating a soft amber backlight and scaling typography.</p>
+            <div class="interactive-stage">
+              <div class="combo-stat stat-float">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-desc">Uptime Speed</span>
+              </div>
+            </div>
+            <div class="effect-formula">
+              <code>transform: translateY(-8px) scale(1.04);</code>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SECTION: HARMONY RULES ===== -->
+      <section class="rules-section">
+        <h2>Principles for Balanced Micro-Interactions</h2>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <h4>1. Subtlety First</h4>
+            <p>
+              Keep <code>scale()</code> values between <code>1.03</code> and <code>1.10</code> to prevent
+              accidental layout obscuring or jarring optical vibrations.
+            </p>
+          </div>
+          <div class="rule-card">
+            <h4>2. Coordinated Shadows</h4>
+            <p>
+              When an element translates upwards, expand the blur and spread of its shadow to mimic real-world lighting.
+            </p>
+          </div>
+          <div class="rule-card">
+            <h4>3. Timing Curves</h4>
+            <p>
+              Use cubic bezier or ease-in-out timing curves around <code>0.3s</code> for responsiveness without sluggishness.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q9: Combined Effects</p>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 - Q3: Image Showcase Layout</title>
+    <link rel="stylesheet" href="question3-image-showcase.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Modern Image Showcase Gallery</h1>
+      <p>Assignment 8 &mdash; Question 3 | BridgeLabz Training</p>
+    </header>
+
+    <main>
+
+      <!-- ===== SECTION: 6-IMAGE GALLERY GRID ===== -->
+      <section class="gallery-section">
+        <h2>Interactive Media Showcase</h2>
+        <p class="section-desc">
+          Six images arranged in an adaptive responsive grid. On hover, each image scales up
+          (<code>transform: scale(1.1)</code>) while a semi-transparent dark overlay reveals focal depth.
+          Captions are provided via semantic <code>&lt;figcaption&gt;</code> elements. Stacks in 1 column below <strong>700px</strong>.
+        </p>
+
+        <!-- Gallery Grid Container -->
+        <div class="image-grid">
+
+          <!-- Card 1 -->
+          <figure class="showcase-card">
+            <div class="image-wrapper">
+              <svg class="demo-img img-1" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3182ce"/>
+                    <stop offset="100%" stop-color="#2b6cb0"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#g1)"/>
+                <circle cx="200" cy="110" r="45" fill="rgba(255,255,255,0.25)"/>
+                <polygon points="120,200 200,90 280,200" fill="rgba(255,255,255,0.35)"/>
+                <polygon points="170,200 230,120 290,200" fill="rgba(255,255,255,0.45)"/>
+                <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Mountain Vista Peak</text>
+              </svg>
+              <!-- Semi-transparent overlay darkening on hover -->
+              <div class="dark-overlay">
+                <span class="overlay-text">Explore Vista</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Mountain Vista:</strong> High-altitude peak illuminated by morning alpine light.
+            </figcaption>
+          </figure>
+
+          <!-- Card 2 -->
+          <figure class="showcase-card">
+            <div class="image-wrapper">
+              <svg class="demo-img img-2" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#38a169"/>
+                    <stop offset="100%" stop-color="#22543d"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#g2)"/>
+                <circle cx="280" cy="80" r="35" fill="rgba(255,255,255,0.2)"/>
+                <path d="M50 220 C 150 140, 250 240, 350 170 L350 260 L50 260 Z" fill="rgba(255,255,255,0.3)"/>
+                <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Emerald Woodlands</text>
+              </svg>
+              <div class="dark-overlay">
+                <span class="overlay-text">Explore Forest</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Emerald Forest:</strong> Dense old-growth canopy nurturing rich biological diversity.
+            </figcaption>
+          </figure>
+
+          <!-- Card 3 -->
+          <figure class="showcase-card">
+            <div class="image-wrapper">
+              <svg class="demo-img img-3" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#dd6b20"/>
+                    <stop offset="100%" stop-color="#7b341e"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#g3)"/>
+                <circle cx="200" cy="130" r="60" fill="rgba(255,255,255,0.3)"/>
+                <path d="M0 200 Q 200 160 400 200 L400 260 L0 260 Z" fill="rgba(0,0,0,0.2)"/>
+                <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Golden Dune Solitude</text>
+              </svg>
+              <div class="dark-overlay">
+                <span class="overlay-text">Explore Dunes</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Golden Dune:</strong> Wind-sculpted desert horizons bathed in warm sunset hues.
+            </figcaption>
+          </figure>
+
+          <!-- Card 4 -->
+          <figure class="showcase-card">
+            <div class="image-wrapper">
+              <svg class="demo-img img-4" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#805ad5"/>
+                    <stop offset="100%" stop-color="#44337a"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#g4)"/>
+                <circle cx="120" cy="90" r="30" fill="rgba(255,255,255,0.35)"/>
+                <polygon points="50,220 180,100 270,220" fill="rgba(255,255,255,0.25)"/>
+                <polygon points="200,220 280,140 360,220" fill="rgba(255,255,255,0.3)"/>
+                <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Celestial Nebula</text>
+              </svg>
+              <div class="dark-overlay">
+                <span class="overlay-text">Explore Cosmos</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Cosmic Horizon:</strong> Interstellar nebula dust clouds glowing under distant starlight.
+            </figcaption>
+          </figure>
+
+          <!-- Card 5 -->
+          <figure class="showcase-card">
+            <div class="image-wrapper">
+              <svg class="demo-img img-5" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#319795"/>
+                    <stop offset="100%" stop-color="#1d4044"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#g5)"/>
+                <path d="M0 160 Q 100 130 200 160 T 400 160 L400 260 L0 260 Z" fill="rgba(255,255,255,0.3)"/>
+                <circle cx="200" cy="80" r="40" fill="rgba(255,255,255,0.25)"/>
+                <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Oceanic Lagoon</text>
+              </svg>
+              <div class="dark-overlay">
+                <span class="overlay-text">Explore Ocean</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Oceanic Reef:</strong> Crystal-clear turquoise waters teeming with marine ecosystems.
+            </figcaption>
+          </figure>
+
+          <!-- Card 6 -->
+          <figure class="showcase-card">
+            <div class="image-wrapper">
+              <svg class="demo-img img-6" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#d53f8c"/>
+                    <stop offset="100%" stop-color="#702459"/>
+                  </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#g6)"/>
+                <circle cx="160" cy="100" r="50" fill="rgba(255,255,255,0.25)"/>
+                <polygon points="100,220 220,110 320,220" fill="rgba(255,255,255,0.3)"/>
+                <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Crimson Sunset</text>
+              </svg>
+              <div class="dark-overlay">
+                <span class="overlay-text">Explore Sunset</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Crimson Twilight:</strong> Vibrant evening sky cast over peaceful canyon valleys.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>BridgeLabz Training &mdash; CSS Assignment 8 &mdash; Q3: Image Showcase Layout</p>
+    </footer>
+
+  </body>
+</html>
