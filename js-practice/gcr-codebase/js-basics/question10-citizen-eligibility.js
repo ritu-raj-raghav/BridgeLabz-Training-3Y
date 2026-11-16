@@ -97,3 +97,4 @@ const eligibilityTable = testPersons.map((p) => {
 });
 
 console.table(eligibilityTable);
+

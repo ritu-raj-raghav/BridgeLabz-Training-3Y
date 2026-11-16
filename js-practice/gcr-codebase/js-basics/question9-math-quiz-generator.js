@@ -107,3 +107,4 @@ const quizTableData = simulatedChallenges.map((q, index) => {
 });
 
 console.table(quizTableData);
+
