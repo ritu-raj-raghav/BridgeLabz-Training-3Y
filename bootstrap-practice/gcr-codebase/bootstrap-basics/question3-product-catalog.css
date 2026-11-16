@@ -1,0 +1,38 @@
+/* ==========================================================
+   Assignment 10 - Q3: Product Catalog
+   Author: Ritu Raj Raghav
+   Description: Product card styling with hover elevation,
+   image scaling, and smooth transitions complementing
+   Bootstrap's 4-column responsive grid system.
+   ========================================================== */
+
+/* Product Card Hover Effect using .shadow-sm and transitions */
+.product-card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+  border-color: #0d6efd !important;
+}
+
+/* Image preview scaling */
+.product-img-wrapper svg {
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-img-wrapper svg {
+  transform: scale(1.04);
+}
+
+/* Add to cart button transition */
+.product-card .btn-primary {
+  transition: all 0.25s ease;
+}
+
+.product-card:hover .btn-primary {
+  background-color: #0b5ed7;
+  box-shadow: 0 0.25rem 0.75rem rgba(13, 110, 253, 0.35);
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 10 - Q3: Product Catalog</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="question3-product-catalog.css" />
+  </head>
+  <body class="bg-light text-dark">
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-dark text-white py-4 shadow-sm mb-4">
+      <div class="container text-center">
+        <h1 class="fw-bold mb-1">Apex Electronics Store</h1>
+        <p class="lead text-secondary mb-0">Assignment 10 &mdash; Question 3 | Bootstrap Grid System</p>
+      </div>
+    </header>
+
+    <main class="container py-4">
+
+      <!-- Catalog Header & Filter Bar -->
+      <section class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+        <div>
+          <h2 class="h3 fw-bold text-dark mb-1">Featured Tech Products</h2>
+          <p class="text-muted mb-0">Showing 4 responsive column cards on desktop, 2 on tablet, 1 on mobile.</p>
+        </div>
+        <div>
+          <span class="badge bg-primary fs-6 px-3 py-2">8 Items In Stock</span>
+        </div>
+      </section>
+
+      <!-- ===== 4-COLUMN PRODUCT GRID ===== -->
+      <!-- .row with .g-4: Standard horizontal grouping with gap -->
+      <!-- .col-12: 1 column on mobile (<= 576px) -->
+      <!-- .col-sm-6: 2 columns on tablets (576px - 768px) -->
+      <!-- .col-md-3: 4 columns on desktop (>= 768px) -->
+      <section class="row g-4">
+
+        <!-- Product 1 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 product-card shadow-sm border">
+            <div class="product-img-wrapper p-3 bg-white text-center">
+              <svg class="img-fluid rounded" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#e0f2fe" rx="8" />
+                <rect x="75" y="40" width="150" height="100" rx="10" fill="#0284c7" />
+                <circle cx="150" cy="90" r="25" fill="#ffffff" opacity="0.8" />
+                <text x="50%" y="85%" text-anchor="middle" fill="#0369a1" font-family="Segoe UI" font-weight="700" font-size="14">Wireless ANC Pro</text>
+              </svg>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-primary-subtle text-primary align-self-start mb-2">Audio</span>
+              <h3 class="card-title h5 fw-bold text-dark mb-2">Wireless ANC Headphones</h3>
+              <p class="card-text text-muted small flex-grow-1">
+                Active noise cancellation with 40h battery stamina and spatial acoustic clarity.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fs-5 fw-bold text-dark">$199.99</span>
+                <button type="button" class="btn btn-primary btn-sm px-3 fw-semibold">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 product-card shadow-sm border">
+            <div class="product-img-wrapper p-3 bg-white text-center">
+              <svg class="img-fluid rounded" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#fef3c7" rx="8" />
+                <circle cx="150" cy="90" r="45" fill="#d97706" />
+                <rect x="135" y="130" width="30" height="40" rx="4" fill="#78350f" />
+                <text x="50%" y="85%" text-anchor="middle" fill="#b45309" font-family="Segoe UI" font-weight="700" font-size="14">Smartwatch Ultra</text>
+              </svg>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-warning-subtle text-warning-emphasis align-self-start mb-2">Wearable</span>
+              <h3 class="card-title h5 fw-bold text-dark mb-2">Titanium Smartwatch Ultra</h3>
+              <p class="card-text text-muted small flex-grow-1">
+                Precision GPS tracking, ECG biomonitoring, and sapphire crystal AMOLED display.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fs-5 fw-bold text-dark">$299.50</span>
+                <button type="button" class="btn btn-primary btn-sm px-3 fw-semibold">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 product-card shadow-sm border">
+            <div class="product-img-wrapper p-3 bg-white text-center">
+              <svg class="img-fluid rounded" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#dcfce7" rx="8" />
+                <rect x="60" y="50" width="180" height="80" rx="8" fill="#16a34a" />
+                <circle cx="150" cy="90" r="20" fill="#ffffff" opacity="0.8" />
+                <text x="50%" y="85%" text-anchor="middle" fill="#15803d" font-family="Segoe UI" font-weight="700" font-size="14">Mechanical RGB</text>
+              </svg>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-success-subtle text-success align-self-start mb-2">Gaming</span>
+              <h3 class="card-title h5 fw-bold text-dark mb-2">Pro Mechanical Keyboard</h3>
+              <p class="card-text text-muted small flex-grow-1">
+                Hot-swappable tactile switches with customizable per-key RGB and aluminum chassis.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fs-5 fw-bold text-dark">$129.00</span>
+                <button type="button" class="btn btn-primary btn-sm px-3 fw-semibold">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 product-card shadow-sm border">
+            <div class="product-img-wrapper p-3 bg-white text-center">
+              <svg class="img-fluid rounded" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#f3e8ff" rx="8" />
+                <ellipse cx="150" cy="90" rx="45" ry="60" fill="#9333ea" />
+                <circle cx="150" cy="65" r="12" fill="#ffffff" opacity="0.8" />
+                <text x="50%" y="85%" text-anchor="middle" fill="#7e22ce" font-family="Segoe UI" font-weight="700" font-size="14">Ergo Wireless Mouse</text>
+              </svg>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-purple-subtle text-purple align-self-start mb-2" style="background-color: #f3e8ff; color: #7e22ce;">Peripherals</span>
+              <h3 class="card-title h5 fw-bold text-dark mb-2">Ergonomic Precision Mouse</h3>
+              <p class="card-text text-muted small flex-grow-1">
+                26,000 DPI optical sensor with whisper-quiet switches and dual wireless connectivity.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fs-5 fw-bold text-dark">$89.99</span>
+                <button type="button" class="btn btn-primary btn-sm px-3 fw-semibold">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-white border-top py-4 text-center mt-5">
+      <div class="container">
+        <p class="mb-0 text-muted">
+          &copy; 2026 Apex Electronics &mdash; Assignment 10 &mdash; Q3: Product Catalog Grid System | BridgeLabz Training
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

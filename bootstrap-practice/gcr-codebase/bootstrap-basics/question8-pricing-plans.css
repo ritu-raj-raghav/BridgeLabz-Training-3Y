@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Assignment 10 - Question 8: Pricing Plans (Panels & Cards)
+   Author: BridgeLabz Training
+   File: question8-pricing-plans.css
+   ========================================================================== */
+
+/* Base Styles & Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Card Transition & Elevation */
+.pricing-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+/* Standard card hover lift */
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Pro / Featured Card specifics */
+.pricing-card-featured {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  border: 2px solid #0d6efd !important;
+}
+
+.pricing-card-featured:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 1.25rem 3.5rem rgba(13, 110, 253, 0.35) !important;
+}
+
+/* Featured Ribbon Badge */
+.featured-badge .badge {
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  border: 2px solid #ffffff;
+}
+
+/* Feature List Typography */
+.feature-list li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Button transition enhancements */
+.btn-outline-primary {
+  border-width: 2px;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+.pricing-card-featured .btn-light {
+  transition: all 0.25s ease-in-out;
+}
+
+.pricing-card-featured .btn-light:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}

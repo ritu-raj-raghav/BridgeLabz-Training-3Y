@@ -1,0 +1,33 @@
+/* ==========================================================
+   Assignment 10 - Q2: Personal Portfolio Basics
+   Author: Ritu Raj Raghav
+   Description: Custom styles complementing Bootstrap utilities
+   (spacing, typography, rounded circle avatar, form controls).
+   ========================================================== */
+
+/* Profile image hover transition */
+.profile-img-wrapper svg {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img-wrapper svg:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.8rem 2rem rgba(13, 110, 253, 0.3) !important;
+}
+
+/* Card hover elevations */
+.profile-hero,
+.contact-section {
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-hero:hover,
+.contact-section:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Focus enhancement for inputs */
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}

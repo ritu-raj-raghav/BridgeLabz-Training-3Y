@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 10 - Q1: Company Landing Page</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="question1-company-landing-page.css" />
+  </head>
+  <body>
+
+    <!-- ===== FULL-WIDTH HEADER WITH NAVBAR ===== -->
+    <!-- .navbar: Bootstrap responsive navigation bar -->
+    <!-- .navbar-expand-lg: Collapses into toggle below 992px -->
+    <!-- .bg-dark .navbar-dark: Dark themed header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+          <!-- Company Name / Brand Logo -->
+          <a class="navbar-brand fw-bold fs-4 text-primary" href="#">
+            NovaSphere<span class="text-light">.io</span>
+          </a>
+
+          <!-- Navbar toggler button for small screen responsiveness -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+            aria-controls="navMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Nav Links using Bootstrap Flex Utilities -->
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#solutions">Solutions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <a href="#get-started" class="btn btn-outline-primary ms-lg-3 px-3">Sign In</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- ===== HERO SECTION ===== -->
+      <!-- .container: Responsive fixed-width container -->
+      <!-- .row: Horizontal group of columns -->
+      <!-- .col-lg-6: 50% width on large screens, 100% on mobile -->
+      <section id="home" class="hero-section bg-light py-5">
+        <div class="container py-lg-5">
+          <div class="row align-items-center g-5">
+            <!-- Left Column: Hero Text & CTA -->
+            <div class="col-12 col-lg-6 text-center text-lg-start">
+              <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill mb-3">
+                Next-Gen Cloud Automation
+              </span>
+              <!-- Large heading -->
+              <h1 class="display-4 fw-bold text-dark lh-sm mb-3">
+                Supercharge Your Startup With Automated AI Pipelines
+              </h1>
+              <!-- Subtitle -->
+              <p class="lead text-muted mb-4">
+                Deploy, monitor, and scale enterprise-grade microservices effortlessly with NovaSphere's intelligent cloud management console.
+              </p>
+              <!-- "Get Started" Action Buttons -->
+              <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                <a href="#get-started" class="btn btn-primary btn-lg px-4 shadow-sm">
+                  Get Started Free &rarr;
+                </a>
+                <a href="#demo" class="btn btn-outline-secondary btn-lg px-4">
+                  Watch Live Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Visual Graphic -->
+            <div class="col-12 col-lg-6 text-center">
+              <div class="hero-graphic-card p-4 rounded-4 shadow-lg bg-white border">
+                <svg class="img-fluid rounded-3" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0d6efd" />
+                      <stop offset="100%" stop-color="#0a58ca" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#heroGrad)" rx="12" />
+                  <circle cx="250" cy="140" r="60" fill="#ffffff" opacity="0.2" />
+                  <polygon points="170,220 250,90 330,220" fill="#ffffff" opacity="0.4" />
+                  <polygon points="210,220 270,130 330,220" fill="#ffffff" opacity="0.6" />
+                  <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="18">Enterprise Cloud Control 99.99%</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== THREE FEATURES SECTION (USING .container, .row, .col) ===== -->
+      <section id="features" class="features-section py-5">
+        <div class="container py-4">
+          <div class="row text-center mb-5">
+            <div class="col-12 col-md-8 mx-auto">
+              <h2 class="fw-bold text-dark mb-2">Engineered For Velocity</h2>
+              <p class="text-muted">Built with robust Bootstrap 5 grid utilities for maximum cross-device responsiveness.</p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Feature Column 1 -->
+            <div class="col-12 col-md-4">
+              <div class="p-4 rounded-3 border bg-white h-100 shadow-sm text-center">
+                <div class="feature-icon mb-3 text-primary fs-1">&#9889;</div>
+                <h3 class="fs-4 fw-bold mb-2">Instant Setup</h3>
+                <p class="text-muted mb-0">Bootstrap grid setup verified via CDN. Zero configuration required to launch production apps.</p>
+              </div>
+            </div>
+
+            <!-- Feature Column 2 -->
+            <div class="col-12 col-md-4">
+              <div class="p-4 rounded-3 border bg-white h-100 shadow-sm text-center">
+                <div class="feature-icon mb-3 text-success fs-1">&#128737;</div>
+                <h3 class="fs-4 fw-bold mb-2">Secure Microservices</h3>
+                <p class="text-muted mb-0">Automated end-to-end payload encryption and SOC2 compliant architecture guarantees.</p>
+              </div>
+            </div>
+
+            <!-- Feature Column 3 -->
+            <div class="col-12 col-md-4">
+              <div class="p-4 rounded-3 border bg-white h-100 shadow-sm text-center">
+                <div class="feature-icon mb-3 text-info fs-1">&#128200;</div>
+                <h3 class="fs-4 fw-bold mb-2">Elastic Scaling</h3>
+                <p class="text-muted mb-0">Fluid layouts scale effortlessly from smartwatch screens to 4K desktop displays.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-dark text-secondary py-4 text-center border-top border-secondary-subtle">
+      <div class="container">
+        <p class="mb-1">&copy; 2026 NovaSphere.io &mdash; BridgeLabz Training Assignment 10 &mdash; Q1: Company Landing Page</p>
+        <small class="text-muted">Powered by Bootstrap 5.3.3 Grid &amp; Utilities</small>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS via CDN (for navbar collapse toggle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

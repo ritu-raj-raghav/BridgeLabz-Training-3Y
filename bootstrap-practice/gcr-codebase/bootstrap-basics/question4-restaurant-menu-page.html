@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 10 - Q4: Restaurant Menu Page</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="question4-restaurant-menu-page.css" />
+  </head>
+  <body class="bg-light text-dark">
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-dark text-white py-5 text-center shadow-sm">
+      <div class="container">
+        <!-- .text-center and .lead for typography -->
+        <h1 class="display-4 fw-bold text-warning mb-2">Trattoria Bella Vista</h1>
+        <p class="lead text-light opacity-75 mb-0">Authentic Artisanal Italian Cuisine &bull; Crafted Daily</p>
+      </div>
+    </header>
+
+    <main class="container py-5">
+
+      <!-- Section Title with .text-center and .lead -->
+      <section class="text-center mb-5">
+        <span class="badge bg-danger-subtle text-danger fw-bold text-uppercase px-3 py-2 rounded-pill mb-2">
+          Daily Culinary Offerings
+        </span>
+        <h2 class="fw-bold text-dark mb-2">Today's Curated Menu</h2>
+        <p class="lead text-muted mx-auto" style="max-width: 650px;">
+          Fresh Mediterranean ingredients, wood-fired hearth delicacies, and family heirloom recipes.
+        </p>
+      </section>
+
+      <!-- Row for Chef's Specials & Food Image -->
+      <div class="row g-4 mb-5 align-items-center">
+
+        <!-- Left Col: Food Image with .img-fluid and caption -->
+        <div class="col-12 col-lg-6">
+          <figure class="figure w-100 bg-white p-3 rounded-4 shadow-sm border mb-0 text-center">
+            <svg class="figure-img img-fluid rounded-3" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="foodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#b45309" />
+                  <stop offset="100%" stop-color="#78350f" />
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#foodGrad)" rx="8" />
+              <circle cx="250" cy="150" r="110" fill="#fef3c7" stroke="#d97706" stroke-width="6" />
+              <circle cx="250" cy="150" r="90" fill="#dc2626" />
+              <circle cx="230" cy="135" r="18" fill="#16a34a" />
+              <circle cx="270" cy="165" r="15" fill="#ffffff" />
+              <circle cx="240" cy="170" r="16" fill="#16a34a" />
+              <circle cx="265" cy="130" r="14" fill="#ffffff" />
+              <text x="50%" y="85%" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="16">Wood-Fired Margherita Speciale</text>
+            </svg>
+            <figcaption class="figure-caption text-center fw-semibold mt-2 text-muted">
+              Wood-Fired Pizza Margherita with San Marzano tomatoes, fresh buffalo mozzarella, and basil.
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Right Col: List Group for "Chef's Specials" -->
+        <div class="col-12 col-lg-6">
+          <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+            <div class="card-header bg-danger text-white py-3">
+              <h3 class="h5 fw-bold mb-0">&#127859; Chef's Specials of the Day</h3>
+            </div>
+            <!-- Bootstrap .list-group -->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Truffle Tagliolini</h4>
+                  <small class="text-muted">Handmade ribbon pasta with shaved black winter truffles and Parmigiano-Reggiano.</small>
+                </div>
+                <span class="badge bg-warning text-dark fs-6 rounded-pill">$28.00</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Osso Buco alla Milanese</h4>
+                  <small class="text-muted">Slow-braised veal shanks served over saffron arborio risotto.</small>
+                </div>
+                <span class="badge bg-warning text-dark fs-6 rounded-pill">$36.50</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Pan-Seared Branzino</h4>
+                  <small class="text-muted">Mediterranean sea bass with herb-infused olive oil and roasted asparagus.</small>
+                </div>
+                <span class="badge bg-warning text-dark fs-6 rounded-pill">$32.00</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <h4 class="h6 fw-bold mb-1">Classic Tiramis&ugrave; Tradizionale</h4>
+                  <small class="text-muted">Espresso-soaked savoiardi biscuits layered with mascarpone cream.</small>
+                </div>
+                <span class="badge bg-warning text-dark fs-6 rounded-pill">$12.00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== BOOTSTRAP TABLE: FULL MENU ITEMS, CATEGORIES & PRICES ===== -->
+      <!-- .table, .table-striped, .table-hover, .table-bordered: Bootstrap Table classes -->
+      <section class="card shadow-sm border rounded-4 p-4 bg-white">
+        <h3 class="h4 fw-bold text-dark mb-3">Full Trattoria Menu</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered align-middle mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col" style="width: 10%;">#</th>
+                <th scope="col" style="width: 35%;">Menu Item</th>
+                <th scope="col" style="width: 25%;">Category</th>
+                <th scope="col" style="width: 15%;">Dietary</th>
+                <th scope="col" style="width: 15%; text-align: right;">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td class="fw-semibold">Bruschetta al Pomodoro</td>
+                <td><span class="badge bg-primary-subtle text-primary">Antipasti</span></td>
+                <td><span class="badge bg-success-subtle text-success">Vegetarian</span></td>
+                <td class="text-end fw-bold text-dark">$11.50</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td class="fw-semibold">Calamari Fritti</td>
+                <td><span class="badge bg-primary-subtle text-primary">Antipasti</span></td>
+                <td><span class="badge bg-info-subtle text-info">Seafood</span></td>
+                <td class="text-end fw-bold text-dark">$15.00</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td class="fw-semibold">Spaghetti alla Carbonara</td>
+                <td><span class="badge bg-secondary-subtle text-secondary">Primi Piatti</span></td>
+                <td><span class="badge bg-secondary-subtle text-dark">Traditional</span></td>
+                <td class="text-end fw-bold text-dark">$22.00</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td class="fw-semibold">Gnocchi al Pesto Genovese</td>
+                <td><span class="badge bg-secondary-subtle text-secondary">Primi Piatti</span></td>
+                <td><span class="badge bg-success-subtle text-success">Vegetarian</span></td>
+                <td class="text-end fw-bold text-dark">$20.50</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td class="fw-semibold">Bistecca alla Fiorentina (600g)</td>
+                <td><span class="badge bg-danger-subtle text-danger">Secondi Piatti</span></td>
+                <td><span class="badge bg-danger-subtle text-danger">Chef Pick</span></td>
+                <td class="text-end fw-bold text-dark">$48.00</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td class="fw-semibold">Panna Cotta con Frutti di Bosco</td>
+                <td><span class="badge bg-warning-subtle text-warning-emphasis">Dolci</span></td>
+                <td><span class="badge bg-success-subtle text-success">Dessert</span></td>
+                <td class="text-end fw-bold text-dark">$10.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-dark text-white py-4 text-center mt-5">
+      <div class="container">
+        <p class="mb-0 text-secondary">
+          &copy; 2026 Trattoria Bella Vista &mdash; Assignment 10 &mdash; Q4: Restaurant Menu Page | BridgeLabz Training
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

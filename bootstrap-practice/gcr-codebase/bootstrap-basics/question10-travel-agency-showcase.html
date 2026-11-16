@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 10 - Q10: Travel Agency Showcase (Carousel &amp; Progress Bar)</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="question10-travel-agency-showcase.css" />
+  </head>
+  <body class="bg-light text-dark">
+
+    <!-- ===== HEADER & NAVBAR ===== -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow-sm">
+        <div class="container">
+          <a class="navbar-brand fw-bold fs-3 text-warning" href="#">
+            Wanderlust<span class="text-white">Horizons</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navTravel"
+            aria-controls="navTravel"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navTravel">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3 align-items-center">
+              <li class="nav-item"><a class="nav-link active" href="#destinations">Destinations</a></li>
+              <li class="nav-item"><a class="nav-link" href="#booking-status">Booking Status</a></li>
+              <li class="nav-item"><a class="nav-link" href="#packages">Tour Packages</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              <li class="nav-item">
+                <a href="#book-now" class="btn btn-warning fw-bold px-3 py-2 rounded-pill shadow-sm">
+                  Book Now
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT CONTAINER ===== -->
+    <main class="container py-5">
+
+      <!-- Section Intro -->
+      <div class="text-center mb-5">
+        <h1 class="display-6 fw-bold text-dark mb-2">Curated World Explorations</h1>
+        <p class="lead text-muted mb-0">
+          Assignment 10 &mdash; Question 10 | Bootstrap Carousel Slideshow &amp; Animated Progress Bar
+        </p>
+      </div>
+
+      <!-- ===== BOOTSTRAP CAROUSEL (3 TRAVEL DESTINATIONS) ===== -->
+      <!-- .carousel .slide: Initializes Bootstrap carousel -->
+      <!-- data-bs-ride="carousel": Automatically cycles slides on page load -->
+      <!-- data-bs-interval: Timing interval in milliseconds for each slide -->
+      <section id="destinations" class="carousel-section mb-5">
+        <div
+          id="travelAgencyCarousel"
+          class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden"
+          data-bs-ride="carousel"
+        >
+
+          <!-- Carousel Indicators (0, 1, 2) -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#travelAgencyCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1: Santorini, Greece"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#travelAgencyCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2: Kyoto, Japan"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#travelAgencyCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3: Swiss Alps, Switzerland"
+            ></button>
+          </div>
+
+          <!-- Carousel Slides Inner Wrapper -->
+          <div class="carousel-inner">
+
+            <!-- Slide 1: Santorini, Greece (4000ms interval) -->
+            <div class="carousel-item active" data-bs-interval="4000">
+              <div class="carousel-img-wrapper position-relative">
+                <svg class="d-block w-100 carousel-hero-svg" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="santoriniSky" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#0284c7" />
+                      <stop offset="60%" stop-color="#38bdf8" />
+                      <stop offset="100%" stop-color="#bae6fd" />
+                    </linearGradient>
+                    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#0369a1" />
+                      <stop offset="100%" stop-color="#0c4a6e" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Sky & Sea -->
+                  <rect width="100%" height="320" fill="url(#santoriniSky)" />
+                  <rect y="320" width="100%" height="180" fill="url(#seaGrad)" />
+                  <!-- Sun -->
+                  <circle cx="600" cy="220" r="70" fill="#fef08a" opacity="0.85" />
+                  <!-- Cliffs & Whitewashed Domes -->
+                  <polygon points="100,500 250,260 450,290 550,500" fill="#475569" />
+                  <polygon points="650,500 850,220 1050,250 1200,500" fill="#334155" />
+                  <!-- White Domes & Cubes -->
+                  <rect x="220" y="270" width="60" height="50" fill="#ffffff" rx="4" />
+                  <ellipse cx="250" cy="270" rx="30" ry="20" fill="#0284c7" />
+                  <rect x="300" y="290" width="70" height="60" fill="#ffffff" rx="4" />
+                  <ellipse cx="335" cy="290" rx="35" ry="22" fill="#0284c7" />
+                  <rect x="830" y="230" width="80" height="70" fill="#ffffff" rx="4" />
+                  <ellipse cx="870" cy="230" rx="40" ry="25" fill="#0284c7" />
+                </svg>
+                <!-- Carousel Caption with dark backdrop for contrast -->
+                <div class="carousel-caption d-block text-start p-4 rounded-4 caption-glass">
+                  <span class="badge bg-warning text-dark fw-bold mb-2 px-3 py-1">Mediterranean Escape</span>
+                  <h2 class="display-6 fw-bold mb-1">Santorini, Greece</h2>
+                  <p class="mb-3 d-none d-md-block">
+                    Experience breathtaking Aegean sunsets, cobalt blue caldera vistas, and luxury whitewashed cliffside villas.
+                  </p>
+                  <a href="#book-now" class="btn btn-primary btn-sm px-3 py-2 fw-semibold rounded-pill">
+                    Explore Greek Odyssey &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Kyoto, Japan (4000ms interval) -->
+            <div class="carousel-item" data-bs-interval="4000">
+              <div class="carousel-img-wrapper position-relative">
+                <svg class="d-block w-100 carousel-hero-svg" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="kyotoSky" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fda4af" />
+                      <stop offset="60%" stop-color="#fecdd3" />
+                      <stop offset="100%" stop-color="#fff1f2" />
+                    </linearGradient>
+                    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#475569" />
+                      <stop offset="100%" stop-color="#1e293b" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#kyotoSky)" />
+                  <!-- Fuji Silhouette -->
+                  <polygon points="350,450 600,160 850,450" fill="url(#mountainGrad)" />
+                  <polygon points="530,240 600,160 670,240 640,250 600,240 560,255" fill="#ffffff" />
+                  <!-- Pagoda Silhouette -->
+                  <rect x="200" y="240" width="100" height="20" fill="#b91c1c" rx="4" />
+                  <polygon points="170,240 250,190 330,240" fill="#991b1b" />
+                  <rect x="215" y="190" width="70" height="15" fill="#b91c1c" />
+                  <polygon points="190,190 250,150 310,190" fill="#991b1b" />
+                  <rect x="230" y="150" width="40" height="15" fill="#b91c1c" />
+                  <polygon points="210,150 250,120 290,150" fill="#991b1b" />
+                  <!-- Torii Gate -->
+                  <rect x="950" y="260" width="16" height="150" fill="#dc2626" />
+                  <rect x="1050" y="260" width="16" height="150" fill="#dc2626" />
+                  <rect x="920" y="270" width="176" height="20" fill="#b91c1c" rx="3" />
+                  <rect x="940" y="300" width="136" height="14" fill="#b91c1c" />
+                </svg>
+                <div class="carousel-caption d-block text-start p-4 rounded-4 caption-glass">
+                  <span class="badge bg-danger fw-bold mb-2 px-3 py-1">Cultural Harmony</span>
+                  <h2 class="display-6 fw-bold mb-1">Kyoto &amp; Mount Fuji, Japan</h2>
+                  <p class="mb-3 d-none d-md-block">
+                    Walk through serene bamboo groves, historic Shinto shrines, and blooming cherry blossom gardens.
+                  </p>
+                  <a href="#book-now" class="btn btn-danger btn-sm px-3 py-2 fw-semibold rounded-pill">
+                    Discover Japan Heritage &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Swiss Alps, Switzerland (4000ms interval) -->
+            <div class="carousel-item" data-bs-interval="4000">
+              <div class="carousel-img-wrapper position-relative">
+                <svg class="d-block w-100 carousel-hero-svg" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="alpsSky" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#1e3a8a" />
+                      <stop offset="70%" stop-color="#3b82f6" />
+                      <stop offset="100%" stop-color="#93c5fd" />
+                    </linearGradient>
+                    <linearGradient id="meadowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#15803d" />
+                      <stop offset="100%" stop-color="#166534" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="100%" height="340" fill="url(#alpsSky)" />
+                  <rect y="340" width="100%" height="160" fill="url(#meadowGrad)" />
+                  <!-- Jagged Alpine Peaks -->
+                  <polygon points="0,380 200,120 420,380" fill="#64748b" />
+                  <polygon points="120,230 200,120 280,230 240,240 200,225 160,240" fill="#ffffff" />
+                  <polygon points="250,400 550,80 850,400" fill="#475569" />
+                  <polygon points="430,220 550,80 670,220 620,235 550,215 480,235" fill="#ffffff" />
+                  <polygon points="680,390 950,140 1200,390" fill="#64748b" />
+                  <polygon points="850,240 950,140 1050,240 1000,250 950,235 900,250" fill="#ffffff" />
+                </svg>
+                <div class="carousel-caption d-block text-start p-4 rounded-4 caption-glass">
+                  <span class="badge bg-success fw-bold mb-2 px-3 py-1">Alpine Adventure</span>
+                  <h2 class="display-6 fw-bold mb-1">Swiss Alps, Switzerland</h2>
+                  <p class="mb-3 d-none d-md-block">
+                    Traverse snow-capped summits, emerald glacial lakes, and world-renowned alpine ski chalets.
+                  </p>
+                  <a href="#book-now" class="btn btn-success btn-sm px-3 py-2 fw-semibold rounded-pill">
+                    View Alpine Trails &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel Controls (Previous / Next Buttons) -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#travelAgencyCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#travelAgencyCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+      </section>
+
+      <!-- ===== BOOKING COMPLETION PROGRESS BAR SECTION ===== -->
+      <!-- Requirement: Progress bar showing booking completion (70%) -->
+      <!-- Classes: .progress, .progress-bar, .progress-bar-striped, .progress-bar-animated -->
+      <section id="booking-status" class="booking-progress-card p-4 p-md-5 bg-white rounded-4 shadow-sm border mb-5">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-4">
+            <h2 class="h4 fw-bold text-dark mb-1">Summer Tour Booking Status</h2>
+            <p class="text-muted small mb-0">High demand across European &amp; Asian routes.</p>
+          </div>
+
+          <div class="col-12 col-md-8">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-semibold text-dark">Overall Group Capacity</span>
+              <span class="badge bg-danger rounded-pill px-3 py-1 fs-7 fw-bold animate-pulse">
+                70% Sold Out &bull; Only 12 Seats Left!
+              </span>
+            </div>
+
+            <!-- Bootstrap 5 Animated Striped Progress Bar (70% Completion) -->
+            <div class="progress" style="height: 28px;" role="progressbar" aria-label="Summer tour booking progress" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-success fw-bold fs-6"
+                style="width: 70%;"
+              >
+                70% Completed
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-2">
+              <span>0% Initial Launch</span>
+              <span>Target: 100% Full Charter</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== THREE DESTINATION PACKAGES GRID ===== -->
+      <section id="packages" class="packages-section mb-5">
+        <h2 class="h3 fw-bold text-center mb-4">Popular Flight &amp; Hotel Packages</h2>
+        <div class="row g-4">
+
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 rounded-4 shadow-sm package-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle w-auto align-self-start mb-3 px-3 py-1">
+                  7 Days / 6 Nights
+                </span>
+                <h3 class="h5 fw-bold mb-2">Greek Island Odyssey</h3>
+                <p class="text-secondary small mb-3 flex-grow-1">
+                  Includes 5-star caldera hotel, daily private catamaran cruise, and wine tasting tour.
+                </p>
+                <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                  <span class="fs-5 fw-bold text-dark">$1,899</span>
+                  <a href="#book-now" class="btn btn-outline-primary btn-sm rounded-pill fw-semibold px-3">
+                    Reserve Seat
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 rounded-4 shadow-sm package-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <span class="badge bg-danger-subtle text-danger border border-danger-subtle w-auto align-self-start mb-3 px-3 py-1">
+                  10 Days / 9 Nights
+                </span>
+                <h3 class="h5 fw-bold mb-2">Tokyo &amp; Kyoto Express</h3>
+                <p class="text-secondary small mb-3 flex-grow-1">
+                  Bullet train Shinkansen passes, authentic Ryokan hot springs, and guided temple tours.
+                </p>
+                <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                  <span class="fs-5 fw-bold text-dark">$2,450</span>
+                  <a href="#book-now" class="btn btn-outline-danger btn-sm rounded-pill fw-semibold px-3">
+                    Reserve Seat
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 rounded-4 shadow-sm package-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <span class="badge bg-success-subtle text-success border border-success-subtle w-auto align-self-start mb-3 px-3 py-1">
+                  8 Days / 7 Nights
+                </span>
+                <h3 class="h5 fw-bold mb-2">Swiss Glacier Panorama</h3>
+                <p class="text-secondary small mb-3 flex-grow-1">
+                  Glacier Express panoramic railway, Zermatt ski excursion, and Lucerne lakeside lodging.
+                </p>
+                <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                  <span class="fs-5 fw-bold text-dark">$2,790</span>
+                  <a href="#book-now" class="btn btn-outline-success btn-sm rounded-pill fw-semibold px-3">
+                    Reserve Seat
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER WITH CONTACT DETAILS ===== -->
+    <!-- Requirement: Footer with contact details -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-4 mt-auto">
+      <div class="container">
+        <div class="row g-4 mb-4">
+
+          <div class="col-12 col-md-4">
+            <h3 class="h5 fw-bold text-warning mb-3">Wanderlust Horizons</h3>
+            <p class="text-secondary small mb-3">
+              Crafting unforgettable worldwide bespoke journeys, luxury cruises, and alpine expeditions since 2012.
+            </p>
+            <p class="text-secondary small mb-0">
+              Licensed by IATA &amp; Global Tourism Council.
+            </p>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h3 class="h5 fw-bold text-white mb-3">Get in Touch</h3>
+            <ul class="list-unstyled text-secondary small mb-0">
+              <li class="mb-2">
+                <strong class="text-light">&#128205; Head Office:</strong> 742 Evergreen Promenade, Suite 400, San Francisco, CA
+              </li>
+              <li class="mb-2">
+                <strong class="text-light">&#128222; Phone:</strong> +1 (800) 555-WANDER / +1 (415) 890-4321
+              </li>
+              <li class="mb-2">
+                <strong class="text-light">&#9993; Inquiries:</strong> concierge@wanderlusthorizons.com
+              </li>
+              <li>
+                <strong class="text-light">&#9200; Hours:</strong> Mon &ndash; Sat: 9:00 AM &ndash; 7:00 PM PST
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h3 class="h5 fw-bold text-white mb-3">Newsletter &amp; Alerts</h3>
+            <p class="text-secondary small mb-3">
+              Subscribe to unlock flash discounts and early bird reservation access.
+            </p>
+            <form class="d-flex gap-2">
+              <input type="email" class="form-control form-control-sm rounded-pill" placeholder="Enter your email" aria-label="Email for newsletter" />
+              <button type="submit" class="btn btn-warning btn-sm rounded-pill fw-bold px-3">
+                Join
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+        <hr class="border-secondary my-4" />
+
+        <div class="text-center text-secondary small">
+          <p class="mb-0">
+            &copy; 2026 Wanderlust Horizons &mdash; BridgeLabz Training &mdash; Assignment 10 &mdash; Q10: Carousel &amp; Progress Bar
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS via CDN (Essential for Carousel transitions & responsive navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

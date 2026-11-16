@@ -1,0 +1,24 @@
+/* ==========================================================
+   Assignment 10 - Q6: Notifications Dashboard (Alerts & Wells)
+   Author: Ritu Raj Raghav
+   Description: Enhancements for alerts, dismiss transitions,
+   and traditional Bootstrap well styling with borders & padding.
+   ========================================================== */
+
+/* Alerts entrance and dismissal transition */
+.alert {
+  border-radius: 10px;
+  border-width: 1.5px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Summary well custom styling */
+.summary-well {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 10 - Q8: Pricing Plans (Panels &amp; Cards)</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="question8-pricing-plans.css" />
+  </head>
+  <body class="bg-light text-dark">
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-dark text-white py-5 shadow-sm text-center">
+      <div class="container">
+        <h1 class="display-5 fw-bold mb-2">Flexible, Transparent Pricing</h1>
+        <p class="lead text-secondary mb-0">
+          Assignment 10 &mdash; Question 8 | Bootstrap Cards, Panels &amp; Grid Alignment
+        </p>
+      </div>
+    </header>
+
+    <!-- ===== MAIN PRICING SECTION ===== -->
+    <!-- .container: Responsive fixed-width container -->
+    <main class="container py-5">
+
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark mb-2">Plans Tailored for Modern Engineering Teams</h2>
+        <p class="text-muted">Choose the right tier to accelerate your development workflow with zero lock-in.</p>
+      </div>
+
+      <!-- .row: Flex container for the 3 pricing cards -->
+      <!-- .g-4: Gutter spacing between columns -->
+      <!-- .align-items-stretch: Forces all cards in the row to match height -->
+      <div class="row g-4 justify-content-center align-items-stretch">
+
+        <!-- ===== CARD 1: STARTER PLAN ===== -->
+        <!-- .col-12 .col-md-4: Full width on mobile, 1/3 width on md+ viewports -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 rounded-4 shadow-sm pricing-card">
+            <div class="card-body p-4 p-xl-5 d-flex flex-column text-center">
+              <h3 class="h4 fw-bold text-dark mb-1">Starter</h3>
+              <p class="small text-muted mb-4">Ideal for solo founders &amp; hobby projects</p>
+
+              <!-- Price Box -->
+              <div class="price-box mb-4 pb-3 border-bottom">
+                <span class="fs-1 fw-extrabold text-dark">$19</span>
+                <span class="text-muted">/ month</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="list-unstyled text-start mb-4 flex-grow-1 feature-list">
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span><strong>Up to 5</strong> team contributors</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span><strong>15 GB</strong> high-speed NVMe storage</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span>Community forum &amp; email support</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2 text-muted">
+                  <span class="text-secondary opacity-50">&#10005;</span>
+                  <span class="text-decoration-line-through">Dedicated cluster isolation</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2 text-muted">
+                  <span class="text-secondary opacity-50">&#10005;</span>
+                  <span class="text-decoration-line-through">Custom domain SLA</span>
+                </li>
+              </ul>
+
+              <!-- Action Button -->
+              <a href="#starter" class="btn btn-outline-primary w-100 py-2 rounded-pill fw-semibold">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CARD 2: PRO PLAN (FEATURED / HIGHLIGHTED) ===== -->
+        <!-- Highlighted with .bg-primary .text-white, elevated shadow, and 'Most Popular' badge -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 rounded-4 shadow-lg pricing-card pricing-card-featured bg-primary text-white position-relative">
+
+            <!-- "Most Popular" Ribbon / Badge -->
+            <div class="featured-badge position-absolute top-0 start-50 translate-middle">
+              <span class="badge bg-warning text-dark px-3 py-2 rounded-pill shadow-sm fw-bold">
+                &#9733; MOST POPULAR
+              </span>
+            </div>
+
+            <div class="card-body p-4 p-xl-5 d-flex flex-column text-center">
+              <h3 class="h4 fw-bold text-white mb-1">Professional</h3>
+              <p class="small text-white-50 mb-4">Fast-growing scaling startups &amp; teams</p>
+
+              <!-- Price Box -->
+              <div class="price-box mb-4 pb-3 border-bottom border-white-50">
+                <span class="fs-1 fw-extrabold text-white">$49</span>
+                <span class="text-white-50">/ month</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="list-unstyled text-start mb-4 flex-grow-1 feature-list">
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-warning fw-bold">&#10003;</span>
+                  <span><strong>Unlimited</strong> team contributors</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-warning fw-bold">&#10003;</span>
+                  <span><strong>150 GB</strong> distributed NVMe storage</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-warning fw-bold">&#10003;</span>
+                  <span>24/7 priority live chat support</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-warning fw-bold">&#10003;</span>
+                  <span>Dedicated build runners &amp; webhooks</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-warning fw-bold">&#10003;</span>
+                  <span>Advanced telemetry &amp; audit trails</span>
+                </li>
+              </ul>
+
+              <!-- Action Button -->
+              <a href="#pro" class="btn btn-light text-primary w-100 py-2 rounded-pill fw-bold shadow-sm">
+                Try Pro for 14 Days
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CARD 3: ENTERPRISE PLAN ===== -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 rounded-4 shadow-sm pricing-card">
+            <div class="card-body p-4 p-xl-5 d-flex flex-column text-center">
+              <h3 class="h4 fw-bold text-dark mb-1">Enterprise</h3>
+              <p class="small text-muted mb-4">Global operations with custom security compliance</p>
+
+              <!-- Price Box -->
+              <div class="price-box mb-4 pb-3 border-bottom">
+                <span class="fs-1 fw-extrabold text-dark">$99</span>
+                <span class="text-muted">/ month</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="list-unstyled text-start mb-4 flex-grow-1 feature-list">
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span>Custom seats &amp; granular RBAC</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span><strong>1 TB+</strong> dedicated object storage</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span>Dedicated Technical Account Manager</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span>Custom SAML SSO &amp; SOC2 reports</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center gap-2">
+                  <span class="text-success fw-bold">&#10003;</span>
+                  <span>99.99% uptime financial SLA</span>
+                </li>
+              </ul>
+
+              <!-- Action Button -->
+              <a href="#enterprise" class="btn btn-outline-primary w-100 py-2 rounded-pill fw-semibold">
+                Contact Enterprise
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-white border-top py-4 text-center mt-auto">
+      <div class="container">
+        <p class="mb-0 text-muted">
+          &copy; 2026 BridgeLabz Training &mdash; Assignment 10 &mdash; Q8: Pricing Plans (Panels &amp; Cards)
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
